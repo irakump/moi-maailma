@@ -1,5 +1,5 @@
 #tehtava1:
 käyttäjä = input("Kerro nimesi: ")
-print("Hei, " + käyttäjä + "!")
+print("Terve, " + käyttäjä + "!")
 
 #tehtava2:
