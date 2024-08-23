@@ -17,11 +17,19 @@ luodit_grammoina = float(luodit)*13.3
 
 sum_grammoina = float(leiviskat_grammoina) + float(naulat_grammoina) + float(luodit_grammoina)  #summa grammoina
 
-grams_to_kilograms = (sum_grammoina)*0.001   #grammojen muutos kilogrammoiksi, 1 g = 0,001 kg.
-print(f"Grammat ovat kilogrammoina {grams_to_kilograms:.0f}")
+grams_to_kilograms = (sum_grammoina)*0.001   #grammojen muutos kilogrammoiksi, 1 g = 0,001 kg ( = 1/1000 kg)
 
+#koko massa on sum_grammoina.
+#sum_gram_minus_sum_kilogram =        #kokonaismassasta vähennetään kilogrammat
 
-# vaihtoehto: print(f"Grammat ovat kilogrammoina {grams_to_kilograms:.0f}")
+print(f"Massa on {grams_to_kilograms:.0f} kilogrammaa")   #kilogrammat kokonaislukuna
+
+#miten rivi 25 saisi grams_to_kilograms:.0f muuttujaksi? Sen voisi muuttaa taas grammoiksi ja vähentää koko massasta.
+
+#print(f{grams_to_kilograms:.0f})
+
+#kilogrammojen (kokonaisluku) muutos takaisin grammoiksi:
+#kg_to_g = grams_to_kilograms:.0f
 
 print(" ")
 print(f"Massa on {sum_grammoina:.1f} grammaa.")     #tulostuu kokonaisluku (.0f), pyöristääkö vai jättääkö desim. pois?
