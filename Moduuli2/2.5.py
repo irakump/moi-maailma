@@ -11,7 +11,9 @@ leiviskat = input("Anna leiviskät: ")
 naulat = input("Anna naulat: ")
 luodit = input("Anna luodit: ")
 
-leiviskat_grammoina = float(leiviskat)*20*32*13.3
+leiviskat_grammoina = float(leiviskat)*20*32*13.3   #ei kannata olla float ja laskutoimitus samassa, ennemmin erikseen selkeyden vuoksi. esim. leiviskat_grammoina = float(leiviskat) ja seuraava rivi olisi lasku.
+                                                    #voi myös laittaa float jo 10.-12. riveille: leiviskat = float(input("Anna leiviskät: "), jolloin muuttuja on heti numero, eikä tarvitse erikseen muuttaa luvuksi.
+
 naulat_grammoina = float(naulat)*32*13.3
 luodit_grammoina = float(luodit)*13.3
 
