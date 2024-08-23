@@ -97,9 +97,9 @@ print("Pituus: " + str(height))
 
 #import on avainsana, voi lisätä toiminnallisuuksia/kirjastoja, esim trig. funktiot.
 import math # laita importit aina tiedoston alkuun (siisteyden vuoksi)
-print(math.pi)
+print(math.pi)  #pii matikkakirjastosta
 
-#tehtävänannon voi kirjoittaa tiedoston alkuun kommenttina, niin tietää mitä tehtävässä tehd.
+#tehtävänannon voi kirjoittaa tiedoston alkuun kommenttina, niin tietää mitä tehtävässä tehdään.
 
 # togle comment tai togle line comment - etsi netistä, voi kirjoittaa useita rivejä..
 #muistiinpanoja, ilman että tarvitsee jokaista merkata
