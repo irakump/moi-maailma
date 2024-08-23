@@ -37,4 +37,6 @@ print(f"Massa on {sum_grammoina:.1f} grammaa.")     #tulostuu kokonaisluku (.0f)
 
 #puuttuu vielä kilogrammat, ja siitä jakojäännös. Vastauksen tulee olla "Massa on x kilogrammaa ja y grammaa.
 
+#Onko mahdollista näin vai pitääkö käyttää jakojäännöstä % tai toinen juttu // ???
+
 print("Massa nykymittojen mukaan on ")
