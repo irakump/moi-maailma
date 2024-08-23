@@ -17,26 +17,17 @@ luodit_grammoina = float(luodit)*13.3
 
 sum_grammoina = float(leiviskat_grammoina) + float(naulat_grammoina) + float(luodit_grammoina)  #summa grammoina
 
-grams_to_kilograms = (sum_grammoina)*0.001   #grammojen muutos kilogrammoiksi, 1 g = 0,001 kg ( = 1/1000 kg)
+kilogram = sum_grammoina*0.001   #grammojen muutos kilogrammoiksi, 1 g = 0,001 kg ( = 1/1000 kg) #jos ei toimi, pitääkö käyttää float eli muuttaa luvuksi?
+
+tasaluku_kilogram = int(kilogram)   #tämä antaa tasaluvun, int = tasaluku. #int voisi laittaa myös suoraan riville 20? esim. kilogram = int(sum_grammoina*0.001) #nimeä silloin rivi 20 tasaluku_kilogram.
 
 #koko massa on sum_grammoina.
-#sum_gram_minus_sum_kilogram =        #kokonaismassasta vähennetään kilogrammat
+#kokonaismassasta vähennetään kilogrammat (rivi 29)
 
-print(f"Massa on {grams_to_kilograms:.0f} kilogrammaa")   #kilogrammat kokonaislukuna
+print(f"Massa on {tasaluku_kilogram} kilogrammaa")   #kilogrammat kokonaislukuna
 
-#miten rivi 25 saisi grams_to_kilograms:.0f muuttujaksi? Sen voisi muuttaa taas grammoiksi ja vähentää koko massasta.
+grammat_jakojaannos_tasaluku = int(sum_grammoina - (tasaluku_kilogram*1000))  #1 kg = 1000 g. Tässä tulee grammojen osuus eli jakojäännös kokonaislukuna.
 
-#print(f{grams_to_kilograms:.0f})
-
-#kilogrammojen (kokonaisluku) muutos takaisin grammoiksi:
-#kg_to_g = grams_to_kilograms:.0f
-
-print(" ")
-print(f"Massa on {sum_grammoina:.1f} grammaa.")     #tulostuu kokonaisluku (.0f), pyöristääkö vai jättääkö desim. pois?
-
-
-#puuttuu vielä kilogrammat, ja siitä jakojäännös. Vastauksen tulee olla "Massa on x kilogrammaa ja y grammaa.
+print(f"Massa nykymittojen mukaan on {tasaluku_kilogram} kilogrammaa ja {grammat_jakojaannos_tasaluku} grammaa.")
 
 #Onko mahdollista näin vai pitääkö käyttää jakojäännöstä % tai toinen juttu // ???
-
-print("Massa nykymittojen mukaan on ")
