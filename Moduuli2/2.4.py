@@ -1,14 +1,14 @@
 # Tehtävä 2.4
 # Kirjoita ohjelma, joka kysyy kolme kokonaislukua. Ohjelma tulostaa lukujen summan, tulon ja keskiarvon.
 
-first = input("Kerro kokonaisluku: ")
-second = input("Kerro toinen kokonaisluku: ")
-third = input("Kerro kolmas kokonaisluku: ")
+first = int(input("Kerro kokonaisluku: "))      #pyydetään käyttäjää syöttämään kokonaisluku
+second = int(input("Kerro toinen kokonaisluku: "))
+third = int(input("Kerro kolmas kokonaisluku: "))
 
-sum = int(first) + int(second) + int(third) #summa
-multiplication = int(first) * int(second) * int(third)	#tulo
+sum = first + second + third    #lasketaan lukujen summa
+multiplication = first * second * third     #lasketaan tulo
 
-#lukujen keskiarvo: (a+b+c)/3
-mean = (int(first) + int(second) + int(third)) /3   #keskiarvo
+#lukujen keskiarvon kaava on (a+b+c)/3
+mean = (first + second + third)/3   #lasketaan keskiarvo
 
-print(f"Lukujen summa on {sum}, tulo {multiplication} ja keskiarvo {mean}.")
+print(f"Lukujen summa on {sum}, tulo {multiplication} ja keskiarvo {mean:.3f}.")    #rajataan ka:n desimaalit kolmeen

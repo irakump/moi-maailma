@@ -27,9 +27,8 @@
 
 #satunnaisen kokonaisluvun arpominen väliltä 1-6:
 #random_number = random.randint (1, 6) #tallenna johonkin muuttujaan random.randint.
-#a ensimmäinen luku ja viimeinen, eli miltä väliltä luvut arvotaan.
-#
-#kaikki importit aina tiedoston ylös
+#ensimmäinen luku ja viimeinen, eli miltä väliltä luvut arvotaan.
+#kaikki importit aina tiedoston alkuun
 
 print("Moi\nmaailma") # merkinnällä \n tulee rivinvaihto tulosteeseen = rivinvaihtomerkki.
 print(" ")
@@ -55,3 +54,20 @@ print(four.imag)
 #kokonaisluvun voi jaotella siistimmin (ei pakollista) alaviivojen avulla.
 five = 2_456_790 #tuloste ilman alaviivoja tai välejä, joten käytännössä ei merkitystä
 print(five)
+
+# Tehtävä 2.2.
+# Kirjoita ohjelma, joka kysyy ympyrän säteen ja tulostaa sen pinta-alan.
+
+# ympyrän pinta-alan kaava on pii*r^2 eli math.pi*r**2
+
+import math
+
+r = float(input("Kerro ympyrän säde: "))
+area_circle = math.pi*r**2  #lasketaan ympyrän pinta-ala
+
+print("Ympyrän pinta-ala on " + str(area_circle))   #liukuluvun muutos merkkijonoksi
+
+#saman tulosteen saa myös seuraavalla: print(f"Ympyrän pinta-ala on {area_circle}")
+
+#yllä rivi 68: str-komennolla saa muutettua liukuluvun merkkijonoksi.
+#kannattaa ennemmin käyttää rivin 70 koodia, koska selkeämpi.
