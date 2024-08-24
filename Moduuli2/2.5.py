@@ -2,34 +2,29 @@
 # Kirjoita ohjelma, joka kysyy käyttäjältä massan keskiaikaisten mittojen mukaan leivisköinä, nauloina ja luoteina.
 # Ohjelma muuntaa syötteen täysiksi kilogrammoiksi ja grammoiksi sekä ilmoittaa tuloksen käyttäjälle.
 
-# Yksi leiviskä on 20 naulaa:   leiviskat*20*32*13.3 (grammaa)  #leiviskät grammoina
-# Yksi naula on 32 luotia:      naulat*32*13.3 (grammaa)    #naulat grammoina
-# Yksi luoti on 13,3 grammaa:   luodit*13.3 (grammaa)   #luodit grammoina
+# Yksi leiviskä on 20 naulaa, yksi naula 32 luotia ja yksi luoti 13,3 grammaa.
 
 print("Kerro massa keskiaikaisten mittojen mukaan.")
-leiviskat = input("Anna leiviskät: ")
-naulat = input("Anna naulat: ")
-luodit = input("Anna luodit: ")
+leiviskat = float(input("Anna leiviskät: "))    #float - merkkijonosta tulee suoraan liukuluku
+naulat = float(input("Anna naulat: "))
+luodit = float(input("Anna luodit: "))
 
-leiviskat_grammoina = float(leiviskat)*20*32*13.3   #ei kannata olla float ja laskutoimitus samassa, ennemmin erikseen selkeyden vuoksi. esim. leiviskat_grammoina = float(leiviskat) ja seuraava rivi olisi lasku.
-                                                    #voi myös laittaa float jo 10.-12. riveille: leiviskat = float(input("Anna leiviskät: "), jolloin muuttuja on heti numero, eikä tarvitse erikseen muuttaa luvuksi.
+leiviskat_grammoina = leiviskat*20*32*13.3  #lasketaan massa grammoina
+naulat_grammoina = naulat*32*13.3
+luodit_grammoina = luodit*13.3
 
-naulat_grammoina = float(naulat)*32*13.3
-luodit_grammoina = float(luodit)*13.3
+sum_grammoina = leiviskat_grammoina + naulat_grammoina + luodit_grammoina   #massa yhteensä grammoina
+print(sum_grammoina)
 
-sum_grammoina = float(leiviskat_grammoina) + float(naulat_grammoina) + float(luodit_grammoina)  #summa grammoina
+kilogram_tasaluku = int(sum_grammoina*0.001)    #kilogrammat kokonaislukuna
 
-kilogram = sum_grammoina*0.001   #grammojen muutos kilogrammoiksi, 1 g = 0,001 kg ( = 1/1000 kg) #jos ei toimi, pitääkö käyttää float eli muuttaa luvuksi?
+print(f"Massa on {kilogram_tasaluku} kilogrammaa")
 
-tasaluku_kilogram = int(kilogram)   #tämä antaa tasaluvun, int = tasaluku. #int voisi laittaa myös suoraan riville 20? esim. kilogram = int(sum_grammoina*0.001) #nimeä silloin rivi 20 tasaluku_kilogram.
+grammat_tasaluku = int(sum_grammoina - (kilogram_tasaluku*1000))  #1 kg = 1000 g. Grammat kokonaislukuna, vähennetään kilogrammojen osuus (grammoina)
 
-#koko massa on sum_grammoina.
-#kokonaismassasta vähennetään kilogrammat (rivi 29)
+print(f"Massa nykymittojen mukaan on {kilogram_tasaluku} kilogrammaa ja {grammat_tasaluku} grammaa.")
 
-print(f"Massa on {tasaluku_kilogram} kilogrammaa")   #kilogrammat kokonaislukuna
+#Kokeile tehdä myös jakojäännöksen kautta? grammat_tasa = int(sum_grammoina%(kilogram_tasaluku*1000)) - jäljelle jää grammojen osuus?
 
-grammat_jakojaannos_tasaluku = int(sum_grammoina - (tasaluku_kilogram*1000))  #1 kg = 1000 g. Tässä tulee grammojen osuus eli jakojäännös kokonaislukuna.
-
-print(f"Massa nykymittojen mukaan on {tasaluku_kilogram} kilogrammaa ja {grammat_jakojaannos_tasaluku} grammaa.")
-
-#Onko mahdollista näin vai pitääkö käyttää jakojäännöstä % tai toinen juttu // ???
+#grammat_tasa = int(sum_grammoina%(kilogram_tasaluku*1000))  #toimii
+#print(grammat_tasa)
