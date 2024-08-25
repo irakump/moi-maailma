@@ -48,7 +48,7 @@ insert into omistaa(lemmikki_ID, ankkalinnalainen_ID)
 values(1,1),(1,3),(2,5),(3,4);
 
 
--- Anna oikeudet fligt_game -tietokantaan, luku- ja päivitysoikeudet:
+-- Anna oikeudet fligt_game (tai ankkalinna) -tietokantaan, luku- ja päivitysoikeudet:
        -- usernameksi oma tunnus, asenna kanta ensin:
 GRANT SELECT, INSERT, UPDATE ON database_name.* TO username@localhost;
 
@@ -59,3 +59,15 @@ SELECT * from lemmikki
     --kirjoita pelkästään exit
     --kirjautuminen:  mysql -u ira -p
     --  -p tarkoittaa, että kysyy salasanaa.
+
+-- select * from lemmikki;       komennoilla voi avata taulut
+-- select * from ankkalinnalainen;
+-- select * from omistaa;
+
+--Jos olet unohtanut luomasi käyttäjän tunnuksen, voit tarkistaa sen seuraavalla komennolla:
+SELECT User FROM mysql.user;
+
+--lentopeli-tietokannan luonti: tekstitiedosto (koodi) tulee tallentaa omalle koneelle .sql -päätteellä
+--(ei .txt -pääte). Sen jälkeen tiedoston voi raahata mysql:ään. Kirjoita: source (ja raahaa tiedosto);
+
+--Anna vielä oikeus omalle käyttäjälle tietokantaan, ks. rivi 53.
