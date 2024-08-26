@@ -59,16 +59,68 @@ if ehto:
 
 #Tehtävä: luo ohjelma, joka pyytää käyttäjältä numeron ja tulostaa onko luku pos, neg vai nolla. (käytä vain if-ehtoa).
 
-number = float(input("Anna luku: "))
+#number = float(input("Anna luku: "))
 
-if number > 0:
-    print("Luku on positiivinen.")
+#if number > 0:
+#    print("Luku on positiivinen.")
 
-if number < 0:
-    print("Luku on negatiivinen.")
+#if number < 0:
+#    print("Luku on negatiivinen.")
 
-if number == 0:
-    print("Luku on nolla.")
+#if number == 0:
+#    print("Luku on nolla.")     #aina 4 välilyöntiä
 
 #pitkä kommentti: """ tähän tekstiä """
+
+#Parempi tapa if-muuttujaan - yleensä ei käytetä pelkkää ifiä.
+
+#else-haara - KAKSI toisensa poissulkevaa vaihtoehtoa:
+
+#money = float(input("Kerro paljonko sinulla on rahaa: "))
+
+#if money >= 5:  #enemmän tai yhtä suuri kuin 5
+#    print("Voit ostaa latten, sinulla on tarpeeksi rahaa.")
+#else:
+#    print("Sinulla ei ole tarpeeksi rahaa latteen.")
+
+#else: eli jos tulee mikä tahansa muu vaihtoehto kuin >= 5, niin elsen tulostus toteutuu, eli jos vastaus on false.
+
+#MONTA VAIHTOEHTOA:
+#user_input = input("Valitse a, b tai c: ")
+#on mahdollista tehdä komento, joka muuttaa ison kirjaimen pieneksi.
+#if user_input == "a":
+#    print("Tehdään jotain, käyttäjä valitsi kirjaimen a")
+#elif user_input == "b":
+#    print("Tehdään toinen juttu, käyttäjä valitsi b")
+#elif user_input == "c":
+#    print("Käyttäjä valitsi c, tapahtuu x asia")
+#    print("Saat c-luokan hytin.")
+    #lohkossa voi olla paljon koodia, useita tulosteita, kaikki sisennetty suoritettaan.
+#else:
+#    print("Käyttäjä ei syöttänyt a, b tai c. Ohjelma ei toimi.")
+
+#print("Ohjelma loppuu, hei hei!")
+
+#LOOGISET OPERAATTORIT:
+# and (ja/molemmat)
+# or (tai)
+#not (ei)
+
+ika = 5
+nimi = "Matti"
+
+#lauseke a ja b on tosi täsmälleen silloin, kun sekä lause a että lause b ovat tosia.
+
+#True True
+print(ika < 10 and nimi == "Matti")     #jos molemmat ovat totta, tulostuu true.
+
+#True False
+print(ika < 10 and nimi == "Keijo")     #jos vain toinen toteutuu, tulostuu false.
+
+#False False
+print(ika < 2 and nimi == "Keijo")      #molemmat väärin, tulostuu false.
+
+#OR:
+#lauseke a or b on tosi täsmälleen silloin, kun vähintään jompi kumpi on totta.
+print(ika < 10 or nimi == "Keijo")
 
