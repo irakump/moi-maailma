@@ -12,3 +12,14 @@
 #PELKÄN KOKONAISOSAN PALAUTTAVA JAKOLASKU: //   (jakolasku, josta tulee kokonaisluku tulokseksi)
 
 #JAKOJÄÄNNÖSOPERAATIO: %
+
+#######################################
+
+#Mod03 VALINTARAKENNE (IF)
+
+#ehto: jos rahaa_taskussa>=5   #yhtä paljon tai enemmän kuin 5
+# osta latte
+
+#if-ehto = tehdään jotakin
+
+#testi:
