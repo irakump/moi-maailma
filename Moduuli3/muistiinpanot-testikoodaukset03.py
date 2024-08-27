@@ -114,7 +114,7 @@ print("Ohjelma sammutettu.")
 
 print(" ")
 """
-
+"""
 #parempi ohjelma
 command = ""
 while command != "lopeta":      #niin kauan kuin komento ei ole lopeta, ohjelmaa suoritetaan. Tämä on parempi kuin yllä oleva tapa
@@ -132,3 +132,102 @@ while command != "lopeta":      #niin kauan kuin komento ei ole lopeta, ohjelmaa
     else:            #komento on joku muu kuin lopeta
         print("En ymmärrä komentoa. Yritä uudestaan, kiitos.")
 print("Ohjelma sammutettu.")
+"""
+
+#noppasimulaattori (import random): kuinka monta kertaa noppaa pitää heittää, että tulee nro 6? satunnainen, keskimäärin joka 6. heitto on luku 6.
+#tulee tehdä muuttuja, joka laskee heittojen lukumäärän.
+
+import random   #laita tämä koodissa tiedoston alkuun (riville 1)
+"""
+die1 = 0    #alkuun laitetaan joku luku, joka poikkeaa nopan silmäluvuista
+roll_counter = 0        #laskuri heittoihin
+while die1 < 6:    #loop pyörii niin kauan, kunnes luku on 6.
+    roll_counter += 1
+    die1 = random.randint(1,6)      #die=noppa?
+    print(f"{roll_counter}. heiton silmäluku on {die1}.")   #tämän voi jättää kommenttiin, jos haluaa tulosteeksi vain, kuinka monennella heitolla tulee luku 6.
+print(f"Noppaa heitettiin {roll_counter} kertaa.")
+"""
+
+"""
+#noppasimulaattori2: kaksi noppaa, kuinka monesti heitetään, jotta tulee molemmista luku 6.
+die1 = 0    #alkuun laitetaan joku luku, joka poikkeaa nopan silmäluvuista
+die2 = 0
+roll_counter = 0        #nämä voisi sijoittaa samalle riville: die1 = die2 = roll_counter = 0
+
+while die1 < 6 or die2 < 6:    #loop pyörii niin kauan, kunnes luku on 6.
+    roll_counter += 1
+    die1 = random.randint(1,6)      #die=noppa?
+    die2 = random.randint(1,6)
+    print(f"{roll_counter}. heiton silmäluvut: {die1} ja {die2}.")   #tämän voi jättää kommenttiin, jos haluaa tulosteeksi vain, kuinka monennella heitolla tulee luku 6.
+print(f"Noppaa heitettiin {roll_counter} kertaa.")
+"""
+
+#noppasimulaattori3:
+#mikä on kahden yhtäaikaisen kutosen todennäköisyys? (laskemalla 1/36)
+
+rounds = 1000             #montako kierrosta pelattu
+round_counter = 0       #montako kierrosta tehty, aloitetaan luvusta 0
+total_rolls = 0
+
+while round_counter < rounds:
+    round_counter += 1      #joka kierroksella lisätään 1 kierroksiin
+    die1 = 0    #alkuun laitetaan joku luku, joka poikkeaa nopan silmäluvuista
+    die2 = 0
+    roll_counter = 0        #nämä voisi sijoittaa samalle riville: die1 = die2 = roll_counter = 0
+    while die1 < 6 or die2 < 6:    #loop pyörii niin kauan, kunnes luku on 6.
+        roll_counter += 1
+        die1 = random.randint(1,6)      #die=noppa
+        die2 = random.randint(1,6)
+        #print(f"{roll_counter}. heiton silmäluvut: {die1} ja {die2}.")   #tämän voi jättää kommenttiin, jos haluaa tulosteeksi vain, kuinka monennella heitolla tulee luku 6.
+    #print(f"Noppaa heitettiin {roll_counter} kertaa.")
+    total_rolls = total_rolls + roll_counter    #lisätään heitetyt kierrokset
+print(f"Kaksi kutosta saatiin keskimäärin {total_rolls / rounds} heitolla/kierros") #tässä on samalla laskukaava, lasketaan heittojen lukumäärä kierroksilla? (nyt kierroksia 10, ks. muuttuja rounds (aiemmin oli rounds = 10)
+
+#jos laittaa enemmän kierroksia, esim. 100 000, tulee lähemmäksi todennäköisyyttä 1/36
+
+#tämän voi yhdistää aiempaan komentorivikäyttöliittymään (elif-toiminnolla):
+command = ""
+while command != "lopeta":      #niin kauan kuin komento ei ole lopeta, ohjelmaa suoritetaan. Tämä on parempi kuin yllä oleva tapa
+    command = input("Komento, kiitos> ")
+    if command == "lopeta":
+        print("Lopetetaan.")
+        #break           # "heittää ulos" loopista, eli tästä hyppää riville 113. Ei paras ohjelmointikäytäntö.
+    elif command == "moi":
+        max_count = int(input("Montako kertaa moikataan? "))        #tähän kopioitu aikaisempi ohjelma
+        counter = 0
+        while counter < max_count:  # tähän voi laittaa, montako kertaa haluaa loopin toistuvan,
+            counter = counter + 1
+            print(f"{counter}. kerran moi")
+        print(f"Laskurin arvo lopuksi: {counter}")
+    elif command == "noppa":
+        rounds = 1000  # montako kierrosta pelattu
+        round_counter = 0  # montako kierrosta tehty, aloitetaan luvusta 0
+        total_rolls = 0
+
+        while round_counter < rounds:
+            round_counter += 1  # joka kierroksella lisätään 1 kierroksiin
+            die1 = 0  # alkuun laitetaan joku luku, joka poikkeaa nopan silmäluvuista
+            die2 = 0
+            roll_counter = 0  # nämä voisi sijoittaa samalle riville: die1 = die2 = roll_counter = 0
+            while die1 < 6 or die2 < 6:  # loop pyörii niin kauan, kunnes luku on 6.
+                roll_counter += 1
+                die1 = random.randint(1, 6)  # die=noppa
+                die2 = random.randint(1, 6)
+            total_rolls = total_rolls + roll_counter  # lisätään heitetyt kierrokset
+        print(f"Kaksi kutosta saatiin keskimäärin {total_rolls / rounds} heitolla/kierros")
+    else:            #komento on joku muu kuin lopeta
+        print("En ymmärrä komentoa. Yritä uudestaan, kiitos.")
+print("Ohjelma sammutettu.")
+
+#break-komentoa ei kannata käyttää (jos löytyy parempi tapa), eli muotoile ehto siten, että tiedetään milloin silmukka/loop päättyy.
+
+muuttuja = 0
+muuttuja  = muuttuja + 1 #muuttujaan lisätään luku 1. sama lyhyemmin: counter =+ 1
+
+#tulostetaan luvun 2 potenssit:
+x = 2
+while x < 1000:     #max 1000 asti
+    print(x)
+    x = x * 2   #sama tulos, lyhyempi koodi: x *= 2
+
+#to 29.8. tunnilla tehdään tehtäviä (voi kysyä apua), ei tule uutta opetusta.
