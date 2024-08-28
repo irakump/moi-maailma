@@ -18,7 +18,7 @@ if (four.is_integer() == True):             #kokeillaan, onko luku jaollinen nel
 else:
     print("Vuosi ei ole karkausvuosi.")     #jos vuosiluku ei ole jaollinen neljällä, ei ole karkausvuosi
 
-#yllä oleva toimii, mutta on varmasti parempi tapa ilman .is_integer() -komentoa???
+#yllä oleva toimii, mutta on varmasti parempi tapa ilman .is_integer() -komentoa????
 
 
 #testi2:
