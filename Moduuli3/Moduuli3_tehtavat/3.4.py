@@ -3,6 +3,8 @@
 
 # Vuosi on karkausvuosi, jos se on jaollinen neljällä. Sadalla jaolliset vuodet ovat karkausvuosia vain jos ne ovat jaollisia myös neljälläsadalla.
 
+#KÄYTÄ JAKOJÄÄNNÖSTÄ: If-ehtoon - jos jakojäännös = 0, on x:llä jaollinen
+
 year = int(input("Kerro vuosiluku: "))      #kysytään vuosiluku
 four = (year/ 4)                           #jaetaan vuosiluku neljällä
 
