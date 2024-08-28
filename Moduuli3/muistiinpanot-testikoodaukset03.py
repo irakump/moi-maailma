@@ -231,3 +231,28 @@ while x < 1000:     #max 1000 asti
     x = x * 2   #sama tulos, lyhyempi koodi: x *= 2
 
 #to 29.8. tunnilla tehdään tehtäviä (voi kysyä apua), ei tule uutta opetusta.
+
+"""
+Tapa selvittää, onko luku int vai float:
+You can get the type of an object with the built-in type() function.
+i = 100
+f = 1.23
+
+print(type(i))
+print(type(f))
+# <class 'int'>             #tulosteet: i on kokonaisluku, joten tulostuu <class 'int'>
+# <class 'float'>           #           f liukuluku, joten tulostuu <class 'float'>
+
+##########################
+Check if float is an integer: is_integer()
+f = 1.23
+
+print(f.is_integer())
+# False
+
+f_i = 100.0
+
+print(f_i.is_integer())
+# True
+
+"""
