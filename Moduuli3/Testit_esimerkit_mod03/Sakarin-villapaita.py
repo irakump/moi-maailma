@@ -9,7 +9,6 @@ if villapaita == "kyllä":
 elif villapaita == "en":
     print("Hävisit pelin!")
 else:
-    print("Ääliö, sinun tulee valita kyllä tai en.")
-    print("Yritä uudestaan.")
+    print("Virheellinen vastaus.")
 
 print("Peli päättyi.")
