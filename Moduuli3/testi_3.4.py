@@ -16,7 +16,8 @@ if (four.is_integer()):             #kokeillaan, onko luku jaollinen neljällä 
             print("Vuosi on karkausvuosi.")
         else:                               #jos sadalla jaollinen luku ei ole jaollinen 400:lla
             print("Vuosi ei ole karkausvuosi.")
-    else: print("Vuosi on karkausvuosi.")   #jos vuosiluku ei ole jaollinen sadalla, on silti karkausvuosi
+    else:
+        print("Vuosi on karkausvuosi.")   #jos vuosiluku ei ole jaollinen sadalla, on silti karkausvuosi
 else:
     print("Vuosi ei ole karkausvuosi.")     #jos vuosiluku ei ole jaollinen neljällä, ei ole karkausvuosi.
 
