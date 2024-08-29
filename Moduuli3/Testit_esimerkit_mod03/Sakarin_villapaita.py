@@ -1,4 +1,4 @@
-#if-ehtorakenne, testi
+#if-ehtorakenne, testi.
 
 #Pue Sakarille villapaita.
 
