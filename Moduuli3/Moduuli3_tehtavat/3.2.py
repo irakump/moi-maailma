@@ -19,5 +19,5 @@ elif (hytti == "B") or (hytti == "b"):
     print("B on ikkunaton hytti autokannen yläpuolella.")
 elif (hytti == "C") or (hytti == "c"):
     print("C on ikkunaton hytti autokannen alapuolella.")
-else:                                                    #mikä tahansa muu kuin LUX, A, B, C
+else:                                                     #mikä tahansa muu kuin LUX, A, B, C
     print("Virheellinen hyttiluokka.")
