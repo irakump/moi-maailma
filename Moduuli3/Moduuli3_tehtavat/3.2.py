@@ -11,13 +11,13 @@ Jos käyttäjä syöttää kelvottoman hyttiluokan, ohjelma tulostaa Virheelline
 
 hytti = input("Kerro hyttiluokka (LUX, A, B tai C): ")    #kysytään hyttiluokka
 
-if hytti == "LUX":
+if (hytti == "LUX") or (hytti == "lux"):
     print("LUX on parvekkeellinen hytti yläkannella.")
-elif hytti == "A":
+elif (hytti == "A") or (hytti == "a"):
     print("A on ikkunallinen hytti autokannen yläpuolella.")
-elif hytti == "B":
+elif (hytti == "B") or (hytti == "b"):
     print("B on ikkunaton hytti autokannen yläpuolella.")
-elif hytti == "C":
+elif (hytti == "C") or (hytti == "c"):
     print("C on ikkunaton hytti autokannen alapuolella.")
 else:                                                    #mikä tahansa muu kuin LUX, A, B, C
     print("Virheellinen hyttiluokka.")
