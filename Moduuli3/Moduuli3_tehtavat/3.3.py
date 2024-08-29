@@ -9,17 +9,17 @@ gender = input("Kerro biologinen sukupuoli (nainen/mies): ")          #kysytää
 hemoglobin_value = float(input("Kerro hemoglobiiniarvo (g/l): "))     #kysytään hemoglobiiniarvo
 
 if (gender == "nainen"):                        #nainen
-    if (117 <= hemoglobin_value <= 175):        #normaali hemoglobiini 117-175 g/l
+    if (117 <= hemoglobin_value <= 175):
         print("Hemoglobiiniarvo on normaali.")
-    elif (hemoglobin_value < 117):              #alhainen hemoglobiini < 117 g/l
+    elif (hemoglobin_value < 117):
         print("Hemoglobiinarvo on alhainen.")
-    else:                                       #muu (eli korkea hemoglobiini > 175 g/l)
+    else:
         print("Hemoglobiiniarvo on korkea.")
 
 if (gender == "mies"):                          #mies
-    if (134 <= hemoglobin_value <= 195):        #normaali hemoglobiili 134-195 g/l.
+    if (134 <= hemoglobin_value <= 195):
         print("Hemoglobiiniarvo on normaali.")
-    elif (hemoglobin_value < 134):              #alhainen hemoglobiini < 134 g/l
+    elif (hemoglobin_value < 134):
         print("Hemoglobiiniarvo on alhainen.")
-    else:                                       #muu (korkea hemoglobiini > 195 g/l)
+    else:
         print("Hemoglobiiniarvo on korkea.")
