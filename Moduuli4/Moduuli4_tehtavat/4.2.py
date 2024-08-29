@@ -1,5 +1,6 @@
 # Tehtävä 4.2
-# Kirjoita ohjelma, joka muuntaa tuumia senttimetreiksi niin kauan kunnes käyttäjä antaa negatiivisen tuumamäärän. Sen jälkeen ohjelma lopettaa toimintansa. 1 tuuma = 2,54 cm
+# Kirjoita ohjelma, joka muuntaa tuumia senttimetreiksi niin kauan kunnes käyttäjä antaa negatiivisen tuumamäärän.
+# Sen jälkeen ohjelma lopettaa toimintansa. 1 tuuma = 2,54 cm
 
 inch = float(input("Kerro tuumat: "))   #kysytään tuumamäärä
 
