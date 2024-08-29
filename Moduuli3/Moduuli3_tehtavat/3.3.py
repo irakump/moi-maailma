@@ -5,7 +5,7 @@
 # Naisen normaali hemoglobiiniarvo on välillä 117-175 g/l.
 # Miehen normaali hemoglobiiniarvo on välillä 134-195 g/l.
 
-gender = input("Kerro biologinen sukupuoli (nainen/mies): ")        #kysytään sukupuoli
+gender = input("Kerro biologinen sukupuoli (nainen/mies): ")          #kysytään sukupuoli
 hemoglobin_value = float(input("Kerro hemoglobiiniarvo (g/l): "))     #kysytään hemoglobiiniarvo
 
 if (gender == "nainen"):                        #nainen
