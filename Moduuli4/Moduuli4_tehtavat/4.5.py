@@ -9,7 +9,7 @@ user = input("Syötä käyttäjätunnus: ")      #kysytään käyttäjätunnus
 password = input("Syötä salasana: ")        #kysytään salasana
 reps = 1                                    #luodaan muuttuja, toistot
 
-while (user != "python" or password != "rules") and (reps < 5):   #toistetaan max 5 kertaa
+while (user != "python" or password != "rules") and (reps < 5):   #toistetaan enintään 5 kertaa
         reps = reps + 1
         user = input("Syötä käyttäjätunnus: ")
         password = input("Syötä salasana: ")
