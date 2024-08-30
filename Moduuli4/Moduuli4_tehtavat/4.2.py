@@ -7,5 +7,5 @@ inch = float(input("Kerro tuumat: "))                           #kysytään tuum
 
 while (inch >= 0):
     inch = inch * 2.54                                          #lasketaan tuumat senttimetreinä
-    print(f"Tuumat senttimetreiksi käännettynä: {inch:.2f}.")   #kahden desimaalin tarkkuudella
+    print(f"Tuumat senttimetreiksi käännettynä: {inch:.2f}")    #kahden desimaalin tarkkuudella
     inch = float(input("Kerro tuumat: "))                       #kysytään tuumamäärä uudelleen

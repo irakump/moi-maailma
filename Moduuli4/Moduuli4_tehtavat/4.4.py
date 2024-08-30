@@ -5,7 +5,7 @@
 # Huomaa, että tietokone ei saa vaihtaa lukuaan arvauskertojen välissä.
 
 import random
-number = random.randint(1,10)                 #tietokone arpoo luvun väliltä 1..10, tallennetaan muuttujaan
+number = random.randint(1,10)                 #tietokone arpoo luvun väliltä 1..10
 
 guess = int(input("Arvaa numero väliltä 1..10: "))  #käyttäjän arvaus
 while (guess != number):

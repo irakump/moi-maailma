@@ -4,6 +4,6 @@
 number = 0
 
 while (number <= 1000):
-    if (number % 3 == 0):        #ehto: luku on jaollinen kolmella, eli jakojäännös on 0
+    if (number % 3 == 0) and (number != 0):     #luku on jaollinen kolmella, eli jakojäännös on 0
         print(number)
-    number = (number + 3)        #lisätään lukuun 3, turhia numeroita ei tarvitse testata
+    number = (number + 3)                       #lisätään lukuun 3, kaikkia numeroita ei tarvitse testata
