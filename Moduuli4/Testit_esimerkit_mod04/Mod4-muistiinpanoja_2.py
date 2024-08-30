@@ -15,5 +15,18 @@ print ("Toiminnot lopetettu.")
 
 """
 IKUINEN SILMUKKA = virhe
--käy esim. silloin, jos toistorakeenteen sisällä ei kasvata muuttujan arvoa, jolloin while-ehto ei muutu koskaan epätodeksi
+-käy esim. silloin, jos toistorakeenteen sisällä ei kasvata muuttujan arvoa, 
+jolloin while-ehto ei muutu koskaan epätodeksi
+"""
+
+"""
+Python-kielessä on kuusi muuttujan perustyyppiä:
+
+-merkkijono (string)
+-luku (number), joka voi olla kokonaisluku, pitkä kokonaisluku, liukuluku tai kompleksiluku
+-totuusarvo (boolean), joka voi olla True tai False
+-lista (list)
+-monikko (tuple)
+-sanakirja (dictionary)
+
 """
