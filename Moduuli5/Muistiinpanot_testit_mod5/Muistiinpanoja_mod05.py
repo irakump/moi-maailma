@@ -5,7 +5,6 @@ LISTARAKENNE []
 -Listaan liitettävät jäsenet luetellaan hakasulkeiden sisällä pilkulla erotettuina
 -listan rakenne: alkaa nrosta 0 (0. alkio)
 """
-from codecs import xmlcharrefreplace_errors
 
 #esim1. - ilman listaa
 name1 = "Hagrid"
