@@ -14,6 +14,7 @@ number = int(input("Syötä kokonaisluku: "))
 if (number == 0) or (number == 1):
     print("Luku ei ole alkuluku.")
 
+
 iterator = 2
 
 #silmukka 1: tulostuu, jos luku ei ole alkuluku
@@ -21,6 +22,8 @@ while (iterator < number):
     if number % iterator == 0:             #jos jakojäännös on 0, luku on jaollinen muulla kuin 1 tai itsellään
         print("Luku ei ole alkuluku.")
     iterator += 1
+
+#kokeile toimiiko for-ehdolla?
 
 #silmukka 2:    tarkoitus saada tulostumaan, jos luku on alkuluku. Nyt tulostuu myös alkuluku esim. luvulle 4???
 while (iterator <= number):
