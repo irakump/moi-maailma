@@ -18,5 +18,5 @@ for num in numbers:
     if (number % num == 0) and (number // num != 1):     #testataan, onko luku jaollinen muulla kuin itsellään
         print("Luku ei ole alkuluku.")
         break
-    elif (number % num == 0) and (number // num == 1):   #luku on jaollinen vain itsellään
+    elif (number % num == 0) and (number // num == 1):   #luku on jaollinen vain itsellään (ja ykkösellä)
         print("Luku on alkuluku.")
