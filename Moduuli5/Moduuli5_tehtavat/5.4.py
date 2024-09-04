@@ -2,7 +2,7 @@
 # (käytä for-toistorakennetta nimien kysymiseen) ja tallentaa ne listarakenteeseen.
 # Lopuksi ohjelma tulostaa kaupunkien nimet yksi kerrallaan allekkain samassa järjestyksessä kuin ne syötettiin.
 # käytä for-toistorakennetta nimien kysymiseen ja for/in toistorakennetta niiden läpikäymiseen.
-
+#
 cities = []
 
 for city in range(5):                   #kysytään kaupunki (viisi kertaa)
