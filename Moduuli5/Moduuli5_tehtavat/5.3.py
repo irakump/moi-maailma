@@ -11,8 +11,10 @@ while (iterator <= number):
     numbers.append(iterator)            #lisätään iteraattori listaan
     iterator += 1
 
-if (number == 0) or (number == 1):
+if (number < 1):
     print("Luku ei ole alkuluku.")
+elif (number == 1):
+    print("Luku on alkuluku.")
 
 for num in numbers:
     if (number % num == 0) and (number // num != 1):     #testataan, onko luku jaollinen muulla kuin itsellään
