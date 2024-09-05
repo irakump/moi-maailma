@@ -1,13 +1,13 @@
 # MODUULI 6: FUNKTIOT
 
-# Funktioita käyttävä ohjelma jakautuu
+# Funktioita käyttävä ohjelma jakautuu:
 # -pääohjelmaan eli siihen ohjelman osaan, joka sijaitsee funktioiden ulkopuolella
 # -funktioihin.
 
 # nimeäminen: jos nimi on kaksiosainen, laita ala_viiva
 # funktioita mm. print, sort, random.randint, ...
 
-#funtio on muodossa do_something() --> sulkeista tunnistaa, että kyseessä on sulut
+#funtio on muodossa do_something() --> sulkeista tunnistaa, että kyseessä on funktio
 
 """
 #esim1. määritellään oma funktio:  def-käskyllä
