@@ -5,18 +5,14 @@
 
 import random
 
-def random_number():
-    random.randint(1,6)
-    return
+def random_number():                    #luodaan muuttuja
+    number = random.randint(1,6)
+    return number
 
-number = random_number()
-print(number)
+roll = random_number()                 #kutsutaan funktiota 1. kerran, tallennetaan muuttujaan
 
-"""
-while number != 6:
-    print(number)
-    random_number()
-"""
-#for die in dice:
-#    print(random_number())
-
+while (roll != 6):                       #pääohjelma
+    print(roll)
+    roll = random_number()             #arvotaan uusi luku, kutsutaan funktiota
+if (roll == 6):
+    print(roll)
