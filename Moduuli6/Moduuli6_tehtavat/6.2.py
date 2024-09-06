@@ -6,8 +6,8 @@
 
 import random
 
-def roll_die(face):                    #luodaan muuttuja, face = tahko
-    number = random.randint(1,face)
+def roll_die(face):                             #luodaan muuttuja, face = tahko
+    number = random.randint(1, face)
     return number
 
 user_input = int(input("Syötä nopan tahkojen lukumäärä: "))

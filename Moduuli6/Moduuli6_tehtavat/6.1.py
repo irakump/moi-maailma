@@ -5,14 +5,14 @@
 
 import random
 
-def roll_die():                    #luodaan muuttuja
+def roll_die():                         #luodaan muuttuja
     number = random.randint(1,6)
     return number
 
-roll = roll_die()                 #kutsutaan funktiota 1. kerran, tallennetaan muuttujaan
+roll = roll_die()                       #kutsutaan funktiota 1. kerran, tallennetaan muuttujaan
 
-while (roll != 6):                       #pääohjelma
+while (roll != 6):                      #pääohjelma
     print(roll)
-    roll = roll_die()             #arvotaan uusi luku, kutsutaan funktiota
+    roll = roll_die()                   #arvotaan uusi luku, kutsutaan funktiota
 if (roll == 6):
     print(roll)
