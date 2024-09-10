@@ -13,7 +13,7 @@ oppilaat = {"Aapeli" : 25, "Bertta" : 19, "Cecilia" : 41, "Daniel" : 9, "Emma" :
 print(oppilaat)
 
 print()
-#tutkitaan, mitä ovat tietueet eli items (tätä ei ole materiaalissa) - item on avain-arvopari yhdessä:
+#tutkitaan, mitä ovat tietueet eli items (tätä ei ole materiaalissa) - item = avain-arvopari (yhdessä):
 print(oppilaat.items())
 
 print()
@@ -83,4 +83,32 @@ print()
 my_dict = {}
 print(type(my_dict))        #tulostetaan tyyppi: <class 'dict'>
 
+######################
+print()
+######################
 
+#mod7: sanakirja: esim. lainausmerkin sisällä tulee käyttää heittomerkkejä! = ' ', muuten ei tunnista avainta
+#esim1.
+yhteystiedot = {"Viivi" : "050-1234567", "Ahmed" : "040-1112223"}
+print(f"Viivin numero on {yhteystiedot['Viivi']}")      #hyödynnetään avainta arvon hakemiseen
+
+#lista.index    hakee listan alkion järjestysnumeron.
+# lista = ["a", "b", "c"]
+# print(lista.index("a"))
+
+#Sanakirjaan voi tallentaa useampia arvoja yhteen avaimeen: esim. nimi ja arvot: puh.nro, osoite, myös
+#..useita avaimia. Eli alla: puh ja osoite ovat yhdessä yksi arvo.
+
+#esim2. MONIULOTTEINEN SANAKIRJA (1. tenttiin ei tule tätä)
+yhteystiedot2 = {
+    "Viivi" : {"puh" : "050-1234567", "osoite" : "Pikkutie 15"},
+    "Ahmed" : {"puh" : "040-1112223", "osoite" : "Katajamutka 42"}
+}
+print(f"Viivin osoite on {yhteystiedot2['Viivi']['osoite']}")
+print(f"Ahmedin osoite on {yhteystiedot2['Ahmed']['osoite']}")
+
+#eli laittamalla avaimen 'Viivi' ja perään toisen avaimen 'osoite' päästään arvoon, jossa lukee osoite.
+# sanakirja[avain][avain]   tulostaa siis moniulotteisesta sanakirjasta halutun arvon
+
+#avaimen tulee olla aina uniikki, esim. ei voi olla kahta avainta "Viivi", mutta arvot voivat olla sama,
+#.. eli esim. sama puhelinnumero tai sama osoite saa olla
