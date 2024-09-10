@@ -8,8 +8,8 @@ luonnin jälkeen
 -alkion haku indeksin perusteella on monikon tapauksessa nopeampaa (kuin listasta, lista käy kaikki alkiot läpi)
 
 """
-from calendar import weekday
-
+#from calendar import weekday
+#weekday
 """
 -Monikko kirjoitetaan sulkeilla: viikonpaivat = ()  #toimii myös ilman sulkeita, mutta on selkeämpi niillä
 --> koodi on luettavampaa sulkeiden avulla
@@ -139,3 +139,11 @@ noppa1, noppa2 = heitä2()
 print(f"Nopista saatiin {noppa1} ja {noppa2}.")
 
 print()
+
+#testi, monikon purku muuttujiin
+hedelmat = ("banaani", "appelsiini", "omena")
+print(hedelmat)
+(eka, toka, kolmas) = hedelmat
+print(eka, toka)
+print(kolmas)
+print(f"Hedelmiä ovat {eka}, {toka} ja {kolmas}.")
