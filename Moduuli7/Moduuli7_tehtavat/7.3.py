@@ -1,4 +1,4 @@
-# Tehtävä 7.3
+# Tehtävä 7.3.
 # Kirjoita ohjelma lentoasematietojen hakemiseksi ja tallentamiseksi.
 # Ohjelma kysyy käyttäjältä, haluaako tämä syöttää uuden lentoaseman, hakea jo syötetyn lentoaseman tiedot
 # vai lopettaa. Jos käyttäjä valitsee uuden lentoaseman syöttämisen, ohjelma kysyy käyttäjältä lentoaseman
