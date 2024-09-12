@@ -92,3 +92,4 @@ print(f"Rivejä käyty läpi yhteensä: {cursor.rowcount}")     #tuloksen pitäi
 
 #SQL-kyselyiden tulosteet ovat MONIKKO
 
+
