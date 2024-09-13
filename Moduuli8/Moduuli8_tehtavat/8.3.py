@@ -31,5 +31,5 @@ airport1 = (find_coordinates(user_input))                       #tallennetaan ko
 user_input = input("Kerro toisen lentokentän ICAO-koodi: ")     #kysytään toinen ICAO-koodi
 airport2 = (find_coordinates(user_input))                       #tallennetaan
 
-distance = (distance.distance(airport1, airport2).km)       #geopyn avulla lasketaan etäisyys (km)
+distance = (distance.distance(airport1, airport2).km)           #geopyn avulla lasketaan etäisyys (km)
 print(f"Lentokenttien etäisyys on {distance:.1f} kilometriä.")
