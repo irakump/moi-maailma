@@ -25,6 +25,5 @@ auto = Auto("ABC-123", 142, 60, 2000)   #asetetaan esimerkkiarvot
 print(f"Rekisteritunnus on {auto.rekisteritunnus}, huippunopeus {auto.huippunopeus} km/h, "
       f"tämänhetkinen nopeus {auto.nopeus} km/h ja kuljettu matka {auto.kuljettu_matka} km.")
 
-
 auto.kulje(1.5)                                                    #auto kulkee 1,5 tuntia nopeudella 60 km/h
 print(f"Auton kulkema matka on {auto.kuljettu_matka:.0f} km.")
