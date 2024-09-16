@@ -12,6 +12,6 @@ class Auto:                                                      #luodaan luokka
         self.nopeus = nopeus
         self.kuljettu_matka = kuljettu_matka
 
-auto1 = Auto("ABC-123", 142)            #luodaan uusi auto ja asetetaan kaksi arvoa
-print(f"Rekisteritunnus on {auto1.rekisteritunnus}, huippunopeus {auto1.huippunopeus} km/h, "
-      f"tämänhetkinen nopeus {auto1.nopeus} km/h ja kuljettu matka {auto1.kuljettu_matka} km.")
+auto = Auto("ABC-123", 142)            #luodaan uusi auto ja asetetaan kaksi arvoa
+print(f"Rekisteritunnus on {auto.rekisteritunnus}, huippunopeus {auto.huippunopeus} km/h, "
+      f"tämänhetkinen nopeus {auto.nopeus} km/h ja kuljettu matka {auto.kuljettu_matka} km.")

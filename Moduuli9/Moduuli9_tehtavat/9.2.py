@@ -20,13 +20,13 @@ class Auto:
         elif self.nopeus > self.huippunopeus:
             self.nopeus = self.huippunopeus
 
-auto1 = Auto("ABC-123", 142)
-print(f"Rekisteritunnus on {auto1.rekisteritunnus}, huippunopeus {auto1.huippunopeus} km/h, "
-      f"tämänhetkinen nopeus {auto1.nopeus} km/h ja kuljettu matka {auto1.kuljettu_matka} km.")
+auto = Auto("ABC-123", 142)
+print(f"Rekisteritunnus on {auto.rekisteritunnus}, huippunopeus {auto.huippunopeus} km/h, "
+      f"tämänhetkinen nopeus {auto.nopeus} km/h ja kuljettu matka {auto.kuljettu_matka} km.")
 
-auto1.kiihdyta(30)                                          #nostetaan auton nopeutta +30 km/h
-auto1.kiihdyta(70)                                          #nopeus +70 km/h
-auto1.kiihdyta(50)                                          #nopeus +50 km/h
-print(f"Auton nopeus on {auto1.nopeus} km/h.")
-auto1.kiihdyta(-200)                                        #hätäjarrutus, nopeus -200 km/h
-print(f"Auton nopeus on {auto1.nopeus} km/h.")
+auto.kiihdyta(30)                                          #nostetaan auton nopeutta +30 km/h
+auto.kiihdyta(70)                                          #nopeus +70 km/h
+auto.kiihdyta(50)                                          #nopeus +50 km/h
+print(f"Auton nopeus on {auto.nopeus} km/h.")
+auto.kiihdyta(-200)                                        #hätäjarrutus, nopeus -200 km/h
+print(f"Auton nopeus on {auto.nopeus} km/h.")

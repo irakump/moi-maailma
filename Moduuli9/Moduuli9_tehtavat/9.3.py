@@ -19,12 +19,12 @@ class Auto:
             self.nopeus = self.huippunopeus
 
     def kulje(self, tunnit):
-        self.kuljettu_matka = self.kuljettu_matka + (self.nopeus * tunnit)      #matka = nopeus (km/h) * aika (tunnit, h)
+        self.kuljettu_matka = self.kuljettu_matka + (self.nopeus * tunnit)  #matka=nopeus(km/h)*aika (h)
 
-auto1 = Auto("ABC-123", 142, 60, 2000)      #asetetaan esimerkkiarvot parametreihin
-print(f"Rekisteritunnus on {auto1.rekisteritunnus}, huippunopeus {auto1.huippunopeus} km/h, "
-      f"tämänhetkinen nopeus {auto1.nopeus} km/h ja kuljettu matka {auto1.kuljettu_matka} km.")
+auto = Auto("ABC-123", 142, 60, 2000)   #asetetaan esimerkkiarvot
+print(f"Rekisteritunnus on {auto.rekisteritunnus}, huippunopeus {auto.huippunopeus} km/h, "
+      f"tämänhetkinen nopeus {auto.nopeus} km/h ja kuljettu matka {auto.kuljettu_matka} km.")
 
 
-auto1.kulje(1.5)                                                                #auto kulkee 1,5 tuntia nopeudella 60 km/h
-print(f"Auton kulkema matka on {auto1.kuljettu_matka:.0f} km.")
+auto.kulje(1.5)                                                    #auto kulkee 1,5 tuntia nopeudella 60 km/h
+print(f"Auton kulkema matka on {auto.kuljettu_matka:.0f} km.")
