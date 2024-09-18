@@ -14,7 +14,7 @@ connection = mysql.connector.connect(
              )
 
 def find_pet_owner(pet_name):
-    sql = (f"SELECT etunimi, sukunimi FROM ankkalinnalainen "
+    sql = (f"SELECT etunimi, sukunimi FROM ankkalinnalainen "  #jos rivi vaihtuu, pitää olla välilyönti!
            f"INNER JOIN omistaa ON ankkalinnalainen.id = ankkalinnalainen_id "
            f"INNER JOIN lemmikki ON lemmikki.id = lemmikki_id "
            f"WHERE lemmikki.nimi = '{user_input}';")

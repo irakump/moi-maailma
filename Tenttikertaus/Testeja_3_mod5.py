@@ -6,7 +6,7 @@
 
 #Lista tarkoittaa järjestettyä joukkoa alkioita.
 my_list = []        #luodaan tyhjä lista
-numbers = [2, 6, 3, 9, 1, 34, 4]     #luodaan lista, jossa on jo alkioita
+numbers = [2, 6, 3, 9, 1, 34, 4, 8]     #luodaan lista, jossa on jo alkioita
 names = ["Silvia", "Akseli", "Herbert", "Hunaja", "Potter", "Gandalf"]
 
 print(names[0])     #tulostetaan names-listan 1. alkio - lista alkaa aina nollasta!
@@ -58,10 +58,13 @@ if "Matti" in names:                #in: kokeillaan, onko nimi listassa ja tehd�
 else:
     print("Nimeä Matti ei ole listassa.")
 
+names.remove("Voldemort")
+names.append("Voldemort")
+
 if "Voldemort" in names:
     print("Tiedät-kai-kuka on listassa.")
 else:
-    print("Pimeyden lordia ei löytynyt!")
+    print("Pimeyden Lordia ei löytynyt!")
 
 names.sort()        #sort() järjestää listan aakkos- tai suuruusjärjestykseen.
 print(names)
@@ -96,7 +99,6 @@ for n in names2:
 #3., valinnainen argumentti, on askeleen suuruus
 
 #esim.
-#luvut = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 for luku in range(3,10):    #tulostetaan luvut välillä 3..9 (rangessa määritellään, että on kyse luvuista)
     print(luku)
@@ -110,5 +112,4 @@ for i in range(5,0,-1):         #3. argumentti: -1 --> saa laskevan järjestykse
 #esim. range(10,21,2) määrittää arvot 10, 12, 14, 16, 18, 20
 
 for luku in range(6):
-    print ("Moi!")      #tulostuu 6 kertaa merkkijono Moi!
-
+    print (f"Moi {luku + 1}. kerran!")      #tulostuu 6 kertaa merkkijono Moi! ja kuinka monennen kerran

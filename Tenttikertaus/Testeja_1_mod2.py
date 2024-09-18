@@ -39,9 +39,9 @@ print()
 # 3. totuusarvo (boolean) - True tai False
 # 4. lista (list), merkitään hakasulkeilla []
 # 5. monikko (tuple), merkitään kaarisulkeilla (), muuttumaton
-# 6. sanakirja (dictionary), merkitään hakasulkeilla {}
+# 6. sanakirja (dictionary), merkitään aaltosulkeilla {}
 
-#lisäksi on olemassa joukko (set), merkitään kaarisulkeilla {}, mutta luodaan: set()
+#lisäksi on olemassa joukko (set), merkitään kaarisulkeilla {}, mutta luodaan (tyhjänä): set()
 # my_dictionary = {} luo sanakirjan, siksi joukkoa luodessa tulee käyttää set-komentoa
 
 #luvun desimaali merkitään aina pisteellä . !
@@ -68,7 +68,8 @@ print()
 #esim.
 #lämpötila celsius-asteina:
 celsius = 24.1234567
-print(f"Lämpötila Celsius-asteina: {celsius:6.2f}") #tässä annetaan 6 merkkiä tilaa luvulle, 2 desim. tarkkuudella
+print(f"Lämpötila Celsius-asteina: {celsius:6.2f}") #tässä annetaan 6 merkkiä tilaa luvulle,
+# 2 desim. tarkkuudella
 
 #ilman muotoilukoodia:
 print(f"Lämpötila Celsius-asteina: {celsius}")

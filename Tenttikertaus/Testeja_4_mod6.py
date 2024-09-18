@@ -77,6 +77,7 @@ def tervehdi(tervehdys, kerrat):
 #pääohjelma:
 tervehdi("Moi", 4)
 tervehdi("Hyvää päivää", 2)
+tervehdi("Mahtava nähdä", 6)
 
 #yllä: samaa muuttujaa voi käyttää siis useaan erilaiseen tulostukseen, kun asettaa parametreja.
 
@@ -117,9 +118,12 @@ luettele(students)
 
 #clear-komenolla voi tyhjentää listan.
 
-print(f"Lukuvuosi päättyy. Yksi oppilas jäi luokalle: {students[3]}.")
-name = students[3]          #tallennetaan muuttujaan
-students.clear()            #listan tyhjennys
-students.append(name)       #lisätään tallennettu nimi listaan
-luettele(students)          #tulostuu alkuperäisen listan 3. alkio eli Pansy.
+import random
+bad_luck = random.randint(0,5)      #arvotaan, kuka jää luokalle
+
+print(f"Lukuvuosi päättyy. Yksi oppilas jäi luokalle: {students[bad_luck]}.")
+name = students[bad_luck]           #tallennetaan muuttujaan
+students.clear()                    #listan tyhjennys
+students.append(name)               #lisätään tallennettu nimi listaan
+luettele(students)                  #tulostuu alkuperäisen listan 3. alkio eli Pansy.
 

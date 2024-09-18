@@ -58,6 +58,7 @@ print(ages)     #tulostuu sanakirja sellaisenaan, avain-arvoparit näkyy
 print(ages["Herbert"])    #tulostuu Herbert-avaimen kautta ikä (40)
 print(ages["Fiona"])              #101
 
+
 name = input("Anna nimi: ")
 if name in ages:                #jos nimi on sanakirjassa, haetaan sitä vastaava arvo
     print(f"Henkilön {name} ikä on {ages[name]}.")
@@ -69,7 +70,8 @@ ages["Gilderoy"] = 47           #eli: sanakirjan_nimi[avain] = arvo         #ava
 print(ages)
 ages["Minerva"] = 71
 print(ages)
+ages["Sir Nicholas Flamel"] = 491
+print(ages)
 
 for a in ages:
     print(a)            #tulostuu vuorotellen jokainen AVAIN (tässä tapauksessa nimi)
-    
