@@ -7,7 +7,8 @@
 # select ident, name, municipality from airport;        #näitä tarvitaan jossakin tehtävässä?
 # rivi 5: noin 71 000 riviä
 
-#kannattaa tehdä tehtävä niin, että itse koodissa tarvitsee käydä kaikkia rivejä läpi
+#kannattaa tehdä tehtävä niin, että itse koodissa ei tarvitse käydä kaikkia rivejä läpi, vaan se
+#tehdään jo SQL-kyselyssä
 
 #select ident, name, municipality from airport where ident = "ZYTH";
 #yllä oleva korjattuna (ident ei tarvitse): select name, municipality from airport where ident = "ZYTH";
