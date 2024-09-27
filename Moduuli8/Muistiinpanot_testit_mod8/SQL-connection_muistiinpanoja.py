@@ -2,6 +2,21 @@
 
 # SQL-connection tulee lisätä koodiin, jotta SQL-komentoja voi antaa PyCharmin kautta
 
+# ladattu uusin sql-connection -versio, eli aina kun ottaa yhteyden sql niin pitää lisätä
+# ylimääräinen rivi "collation" connection-muuttujaan!
+import mysql.connector
+
+connection = mysql.connector.connect(
+    host='localhost',
+    port=3306,
+    database='treasure_chest',
+    user='treasure',
+    password='chest',
+    autocommit=True,
+    collation='utf8mb4_general_ci'
+)
+
+#jos on vanhempi versio, yhteys otetaan näin
 import mysql.connector
 
 connection = mysql.connector.connect(

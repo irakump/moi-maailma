@@ -32,3 +32,5 @@ print(f"Lemmikin {user_input} omistaja on {owner_name[0][0]} {owner_name[0][1]}.
 #lemmikin omistajan nimi tallentuu listana muuttujaan owner_name. Eli owner_name on lista, jonka..
 #.. alkiot ovat monikoita! Siksi pitää hakea listan alkiosta 0 edelleen 0. monikon alkio, ja
 #seuraavassa haetaan edelleen listan alkiosta 0 monikon alkio 1.
+
+
