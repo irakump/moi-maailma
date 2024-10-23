@@ -7,26 +7,26 @@
 # uusi nopeus. Kuljettua matkaa ei tarvitse vielä päivittää.
 
 class Auto:
-    def __init__(self, rekisteritunnus, huippunopeus, nopeus = 0, kuljettu_matka = 0):
+    def __init__(self, rekisteritunnus, huippunopeus, nopeus=0, kuljettu_matka=0):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
         self.nopeus = nopeus
         self.kuljettu_matka = kuljettu_matka
 
-    def kiihdyta(self, nopeuden_muutos):                    #luodaan metodi
+# luodaan metodi
+    def kiihdyta(self, nopeuden_muutos):
         self.nopeus = self.nopeus + nopeuden_muutos
         if self.nopeus < 0:
             self.nopeus = 0
         elif self.nopeus > self.huippunopeus:
             self.nopeus = self.huippunopeus
 
-auto = Auto("ABC-123", 142)
-print(f"Rekisteritunnus on {auto.rekisteritunnus}, huippunopeus {auto.huippunopeus} km/h, "
-      f"tämänhetkinen nopeus {auto.nopeus} km/h ja kuljettu matka {auto.kuljettu_matka} km.")
+# pääohjelma
+auto1 = Auto("ABC-123", 142)
 
-auto.kiihdyta(30)                                          #nostetaan auton nopeutta +30 km/h
-auto.kiihdyta(70)                                          #nopeus +70 km/h
-auto.kiihdyta(50)                                          #nopeus +50 km/h
-print(f"Auton nopeus on {auto.nopeus} km/h.")
-auto.kiihdyta(-200)                                        #hätäjarrutus, nopeus -200 km/h
-print(f"Auton nopeus on {auto.nopeus} km/h.")
+auto1.kiihdyta(30)
+auto1.kiihdyta(70)
+auto1.kiihdyta(50)
+print(f"Auton nopeus on {auto1.nopeus} km/h.")
+auto1.kiihdyta(-200)                                    # hätäjarrutus
+print(f"Auton nopeus on {auto1.nopeus} km/h.")
