@@ -111,3 +111,68 @@ dog2.print_information()
 dog3.print_information()
 
 # voisi tehdä myös erilaisia metodeja, jos haluaa vaikka palauttaa vain värin tai koiran nimen ja omistajan.
+
+#######
+print()
+#######
+
+# esimerkkiohjelma
+
+class Kissa:
+    def __init__(self, nimi, syntymavuosi, maukuminen="meow"):      # oletusarvo maukumiselle määritelty
+        self.nimi = nimi
+        self.syntymavuosi = syntymavuosi
+        self.maukuminen = maukuminen
+
+    def puhu(self, kerrat):
+        for i in range(kerrat):
+            print(self.maukuminen)
+        return
+
+# pääohjelma
+# luodaan kissat, määritellään ominaisuudet
+kissa1 = Kissa("Mouru", 2022)   # ei määritellä maukumista, joten tulee oletusarvo
+kissa2 = Kissa("Catcat", 2018, "meeeooowwwww")
+kissa3 = Kissa("Pörrö", 2020, "miu-miu")
+
+# kutsutaan funktiota
+print(f"{kissa1.nimi} maukuu:")
+kissa1.puhu(5)
+print(f"\n{kissa2.nimi} maukuu:")
+kissa2.puhu(3)
+print(f"\n{kissa3.nimi} maukuu:")
+kissa3.puhu(2)
+
+#######
+print()
+#######
+
+# LUOKKAMUUTTUJA (staattinen muuttuja)
+# ominaisuudet ovat oliokohtaisia, esim. kaikilla luokan olioilla on oma nimi
+# luokkamuuttujaan voi tallentaa kaikille olioille yhteistä tietoa, esim. kuinka monta oliota on luotu,
+#    esim. koirien lukumäärä (eli kuinka monta koira-luokan ilmentymää on luotu)
+# luokkamuuttuja sijoitetaan alustajan (__init__) ulkopuolelle eli ennen sitä
+
+# esim. luokkamuuttuja
+
+class Kissa:
+
+    tehdyt_kissat = 0       # luokkamuuttuja, jonka määrää kasvatetaan aina kun luodaan uusi kissa
+
+    def __init__(self, nimi, syntymavuosi, maukuminen="meow"):      # oletusarvo maukumiselle määritelty
+        self.nimi = nimi
+        self.syntymavuosi = syntymavuosi
+        self.maukuminen = maukuminen
+        Kissa.tehdyt_kissat = Kissa.tehdyt_kissat + 1
+
+    def puhu(self, kerrat):
+        for i in range(kerrat):
+            print(self.maukuminen)
+        return
+
+kissa1 = Kissa("Mouru", 2022)
+kissa2 = Kissa("Catcat", 2018, "meeeooowwwww")
+kissa3 = Kissa("Miu", 2023)
+print(f"Luodaan uusia kissoja: {kissa1.nimi}, {kissa3.nimi} ja {kissa2.nimi}.")
+print(f"Kissoja on nyt {Kissa.tehdyt_kissat}.")
+
