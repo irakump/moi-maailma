@@ -116,15 +116,16 @@ dog3.print_information()
 print()
 #######
 
-# esimerkkiohjelma
+# esimerkkiohjelma - lisätään konstruktori (voi lisätä valmiiksi oletusarvon)
 
 class Kissa:
-    def __init__(self, nimi, syntymavuosi, maukuminen="meow"):      # oletusarvo maukumiselle määritelty
+    def __init__(self, nimi, syntymavuosi, maukuminen="meow"):  # oletusarvo maukumiselle määritelty
         self.nimi = nimi
         self.syntymavuosi = syntymavuosi
         self.maukuminen = maukuminen
 
     def puhu(self, kerrat):
+        print(f"Kissa {self.nimi} maukuu {kerrat} kertaa: ")
         for i in range(kerrat):
             print(self.maukuminen)
         return
@@ -134,13 +135,12 @@ class Kissa:
 kissa1 = Kissa("Mouru", 2022)   # ei määritellä maukumista, joten tulee oletusarvo
 kissa2 = Kissa("Catcat", 2018, "meeeooowwwww")
 kissa3 = Kissa("Pörrö", 2020, "miu-miu")
+kissa4 = Kissa("Mörkö", 2019)
 
-# kutsutaan funktiota
-print(f"{kissa1.nimi} maukuu:")
+# kutsutaan konstruktoria?
+
 kissa1.puhu(5)
-print(f"\n{kissa2.nimi} maukuu:")
 kissa2.puhu(3)
-print(f"\n{kissa3.nimi} maukuu:")
 kissa3.puhu(2)
 
 #######
@@ -166,13 +166,19 @@ class Kissa:
         Kissa.tehdyt_kissat = Kissa.tehdyt_kissat + 1
 
     def puhu(self, kerrat):
+        print(f"Kissa {self.nimi} maukuu {kerrat} kertaa: ")
         for i in range(kerrat):
             print(self.maukuminen)
         return
 
-kissa1 = Kissa("Mouru", 2022)
+kissa1 = Kissa("Mouru", 2022)   # ei määritellä maukumista (attribuuttia), joten tulee oletusarvo
 kissa2 = Kissa("Catcat", 2018, "meeeooowwwww")
-kissa3 = Kissa("Miu", 2023)
-print(f"Luodaan uusia kissoja: {kissa1.nimi}, {kissa3.nimi} ja {kissa2.nimi}.")
+kissa3 = Kissa("Pörrö", 2020, "miu-miu")
+kissa4 = Kissa("Mörkö", 2019)
+
+print(f"Luodaan uusia kissoja: {kissa1.nimi}, {kissa3.nimi}, {kissa4.nimi} ja {kissa2.nimi}.")
 print(f"Kissoja on nyt {Kissa.tehdyt_kissat}.")
 
+#######
+print()
+#######

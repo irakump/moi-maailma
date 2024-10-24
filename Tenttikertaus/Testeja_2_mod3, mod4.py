@@ -1,5 +1,5 @@
 #Tenttikertausta
-from Moduuli5.Muistiinpanot_testit_mod5.Muistiinpanoja_mod05 import iterator
+from Moduuli05.Muistiinpanot_testit_mod5.Muistiinpanoja_mod05 import iterator
 
 #MODUULI 3: valintarakenne (if)
 #MODUULI 4: toistorakenne (while)
