@@ -1,5 +1,7 @@
 # Moduuli 10 - assosiaatiot
 
+import random
+
 # kaksi luokkaa voi yhdistää
 
 # tehdään kaksi luokkaa: auto ja kuljettaja. Tässä tapauksessa kuljettajalla on auto, eli pitää valita
@@ -36,11 +38,14 @@ class Kuljettaja:
         print(f"Olen {self.nimi}, {self.ika} vuotta ja ajan autoa {self.auto.rekisteritunnus}.")
         print("Ajetaan autoa.")
         self.auto.kiihdyta(40)
-        print(f"Nopeus: {self.auto.nopeus} km/h")
+        self.auto.kulje(1)
+        print(f"Nopeus: {self.auto.nopeus} km/h, kuljettu matka: {self.auto.kuljettu_matka} km.")
         self.auto.kiihdyta(140)
-        print(f"Nopeus: {self.auto.nopeus} km/h")
+        self.auto.kulje(1)
+        print(f"Nopeus: {self.auto.nopeus} km/h, kuljettu matka: {self.auto.kuljettu_matka} km.")
         self.auto.kiihdyta(-200)
-        print(f"Nopeus: {self.auto.nopeus} km/h")
+        self.auto.kulje(1)
+        print(f"Nopeus: {self.auto.nopeus} km/h, kuljettu matka: {self.auto.kuljettu_matka} km.")
 
 
 # luodaan kolmas luokka
@@ -56,15 +61,12 @@ class Autotalli:
         self.autot.append(auto)
 
     def auto_ulos(self, auto):
-        self.autot.remove()
-        return                      # ???jos ei ole return, palauttaa None???
+        self.autot.remove(auto)
 
     def tulosta_inventaario(self):
         print("Autot tallissa: ")
         for auto in self.autot:
             auto.tulosta_ominaisuudet()
-
-
 
 # luodaan oliot ja sijoitetaan viittaukset niihin muuttujiin
 auto1 = Auto("ABC-123", 180)
@@ -82,8 +84,13 @@ talli.auto_sisaan(auto2)
 talli.auto_sisaan(auto3)
 talli.tulosta_inventaario()
 
-# nyt yllä oleva versio sallii saman auton laittamisen talliin useaan kertaan
-    # muutokset: joko autolistasta tehdään joukko (jos autojen järjestyksellä ei ole väliä)
+talli.auto_ulos(auto2)
+talli.tulosta_inventaario()
+
+# luodaan 10 erilaista auto-oliota autotalliin
+for i in range(10):
+    auto = Auto(f"ABC-{i+1}", random.randint(100, 200))
+
 
 
 """
@@ -107,5 +114,37 @@ def auto_sisaan(self):
     pass                    # pass on tilapäinen, eli funktiota ei suoriteta (voisi olla myös return)
 """
 
+# mod10 teht. 1 start
 
+class Hissi:
+    def __init__(self, alin_kerros, ylin_kerros):
+        self.alin_kerros = alin_kerros
+        self.ylin_kerros = ylin_kerros
 
+        # nykyinen kerros
+        self.kerros = alin_kerros
+
+    def siirry_kerrokseen(self, kohdekerros):
+        if kohdekerros > self.kerros:
+            # olion omia metodeita kutsuttaessa käytetään self. -etuliitettä
+            while kohdekerros > self.kerros:
+                self.kerros_ylos()
+        elif kohdekerros < self.kerros:
+            while kohdekerros < self.kerros:
+                self.kerros_alas()
+
+    def kerros_ylos(self):
+        self.kerros += 1
+
+    def kerros_alas(self):
+        self.kerros -= 1
+
+h = Hissi(2, 10)
+h.siirry_kerrokseen(4)
+print(f"Hissi on kerroksessa {h.kerros}")
+h.siirry_kerrokseen(1)
+print(f"Hissi on kerroksessa {h.kerros}")
+h.siirry_kerrokseen(8)
+print(f"Hissi on kerroksessa {h.kerros}")
+h.siirry_kerrokseen(15)         # tämän ei pitäisi olla mahdollista, nyt menee 15. kerrokseen vaikka krs:a on 10
+print(f"Hissi on kerroksessa {h.kerros}")
