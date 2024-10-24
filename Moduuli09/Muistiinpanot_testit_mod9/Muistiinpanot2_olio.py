@@ -182,3 +182,52 @@ print(f"Kissoja on nyt {Kissa.tehdyt_kissat}.")
 #######
 print()
 #######
+
+# Lisää esimerkkejä luokista, tuntiesimerkit
+
+    # def on konstruktori (metodi)
+
+# voi määritellä valmiiksi auton ominaisuuksia, jotka tulevat luodessa
+class Auto1:
+    def __init__(self):
+        self.rekisteritunnus = "ABC-123"
+        self.huippunopeus = 100
+
+auto1 = Auto1()
+print(f"Auton {auto1.rekisteritunnus} huippunopeus on {auto1.huippunopeus} km/h.")
+
+# voi määritellä parametrit, jotka käyttäjän pitää itse määritellä oliota luodessa
+class Auto:
+    def __init__(self, rekisteritunnus, huippunopeus):
+        self.rekisteritunnus = rekisteritunnus
+        self.nopeus = 0             # tämä on kovakoodattu, eli nopeutta ei voi itse määrittää alussa
+        self.huippunopeus = huippunopeus
+
+    def tulosta_ominaisuudet(self):
+        print(f"Rekkari: {self.rekisteritunnus}, huippunopeus: {self.huippunopeus} km/h, "
+              f"tämänhetkinen nopeus: {self.nopeus} km/h.")
+
+    def kiihdyta(self):
+        self.nopeus = self.nopeus + 10      # tai self.nopeus += 1
+
+auto2 = Auto("ABC-987", 120)
+auto3 = Auto("EDF-456", 150)
+
+auto2.tulosta_ominaisuudet()
+auto3.tulosta_ominaisuudet()
+
+# parametreja voi myös määritellä jälkikäteen
+#auto2.rekisteritunnus = "ERT-789"
+#auto2.tulosta_ominaisuudet()
+
+# samaan olioon voi viitata useasta muuttujasta, esim. auto2 = auto3, jolloin auto2 ja auto3 viittaavat
+# molemmat olioon, joka on tallennettu muuttujaan auto3 (eli auto3 yhteydessä olevaan olioon)
+
+# nyt kiihdyta-konstruktorissa nopeus lisääntyy 10 km/h, eli voi kiihdyttää useaan kertaan:
+
+auto2.kiihdyta()
+auto2.kiihdyta()
+auto2.kiihdyta()
+
+auto2.tulosta_ominaisuudet()
+
