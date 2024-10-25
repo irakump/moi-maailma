@@ -2,7 +2,14 @@
 
 import random
 
-# kaksi luokkaa voi yhdistää
+# Olio-ohjelmoinnissa ohjelma koostetaan luokista, joista luodaan olioita eli ilmentymiä
+# oliot voivat olla vuorovaikutuksessa keskenään: olio voi käsitellä toisia olioita ja kutsua niiden metodeja
+# assosiaatio = olioiden välinen tuntemissuhde
+# jos tekee luokat eri tiedoistoihin, voi ne liittää yhteen import-lauseella
+
+
+
+# kaksi luokkaa voi yhdistää assosiaation avulla
 
 # tehdään kaksi luokkaa: auto ja kuljettaja. Tässä tapauksessa kuljettajalla on auto, eli pitää valita
 # miten luokat yhdistetään toisiinsa (voisi olla myös niin, että autolla on kuljettaja)
@@ -94,8 +101,8 @@ for i in range(10):
 
 
 """
-# käytetään olion toimintoja nopeuden ja kuljetun matkan muuttamiseen (saman voi tehdä myös...
-# ...konstruktorin sisällä)
+# käytetään olion toimintoja nopeuden ja kuljetun matkan muuttamiseen (saman voi tehdä myös
+# konstruktorin sisällä kuten yllä)
 auto1.kiihdyta(20)
 auto2.kiihdyta(50)
 auto1.kulje(1)
@@ -112,6 +119,7 @@ esim. pass:
 
 def auto_sisaan(self):
     pass                    # pass on tilapäinen, eli funktiota ei suoriteta (voisi olla myös return)
+                            # voi tehdä esim. luokkaa luodessa, ja päivittää myöhemmin
 """
 
 # mod10 teht. 1 start
@@ -148,3 +156,9 @@ h.siirry_kerrokseen(8)
 print(f"Hissi on kerroksessa {h.kerros}")
 h.siirry_kerrokseen(15)         # tämän ei pitäisi olla mahdollista, nyt menee 15. kerrokseen vaikka krs:a on 10
 print(f"Hissi on kerroksessa {h.kerros}")
+
+###
+print()
+###
+
+#######################
