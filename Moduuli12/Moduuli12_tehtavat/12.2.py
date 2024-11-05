@@ -7,7 +7,7 @@
 import requests
 import requests.exceptions
 
-api_key = "input_api_key"         # API-avain poistettu tästä
+api_key = ""         # API-avain poistettu tästä
 
 # virheiden käsittely
 def test_errors(url):
@@ -45,7 +45,7 @@ def get_weather():
     response = test_errors(url)
     response_body = response.json()
 
-    weather_name = (response_body["weather"][0]["main"])
+    weather_name = (response_body["weather"][0]["description"])
     temperature = (response_body["main"]["temp"])
     print(f"Weather in {city_name}: {weather_name}")
     print(f"Temperature: {temperature} degrees Celsius")
