@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mod 01</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+    </style>
+    <!-- mikäli annetaan suoraan head-osiossa, muista defer -->
+    <script src="00.js" defer></script>
+
+</head>
+<body>
+
+    <h2>JavaScript-harjoitus</h2>
+    <div>Moi olen divi</div>
+    <p id="text" class="blue">Haluan muuttaa tätä tekstiä</p>
+
+    <!-- muuttujat scriptissä (tyypillisimmät):
+    const (muuttumaton eli ei voi määritellä saman nimistä muuttujaa uudelleen)
+    let (muuttuva, muuttujan arvoa voi vaihtaa)
+    var
+    -->
+
+    <!-- juuri ennen body tägiä -->
+<script>
+    'use strict';
+    console.log('Moikka, printtaan suoraan bodyn sisältä');
+    let name = 'Ira';
+    //const nimi2;
+    //nimi2 = "Harry";
+
+    const element = document.querySelector('#text');
+    console.log(element);
+    // string literal = merkkijono '' tai ""
+    let teksti = "Moikka maailma";
+    element.innerHTML = teksti    // elementin sisäinen teksti vaihdetaan johonkin muuhun javascriptin kautta
+    element.style.color = "red";
+
+    // template literal = muotoiltava lause ````
+    // vertaa: pythonissa: teksti = f"Kiva tavata, {name}!"
+    const teksti1 = `Kiva tavata, ${name}!`;    // dollarilla sijoitetaan muuttuja
+    const teksti2 = `Kiva tavata ` + name;      // toinen tapa
+    console.log(teksti1);
+
+
+    // consolen ja html-dokumentin lisäksi voidaan printata alert:n avulla
+    //alert(teksti2);    // tulee ponnahdusikkuna selaimeen
+
+    name = prompt("Anna nimesi: ")       // tämä on kuin input pythonissa
+    console.log("Let avulla name-muuttuja saa uuden arvon: ", name)
+
+    // muuttujan tyyppejä voi tutkia, typeof
+    console.log(typeof name)
+
+    // javascript on loosely typed (on mahdollista vaihtaa esim. string numeroksi):
+    // javascriptissä jos laittaa 15 == "15", vastaa True
+    // jos haluaa varmistaa että tyyppi on oikein, pitää olla 15 === "15",
+    // jolloin tulee False
+
+    // vaihdetaan nyt string numeroksi
+    name = 15;
+    console.log(typeof name)
+    name = true;    // on nyt totuusarvo eli boolean
+    console.log(typeof name);
+
+    const taulukko = [0,2,4,5,6,7]      // ei voi myöhemmin määrittää taulukkoa uudelleen, koska const muuttumaton
+    taulukko[0] = 10;       // tämä onnistuu - sisältöä voi muuttaa, mutta koko taulukkoa ei voi määrittää uudelleen, esim.
+    // taulukko = [1,2,3,4]     // tämä ei onnistu
+    console.log(taulukko)
+
+
+    // document tarkoittaa html-dokumenttia
+    // queryselector on metodi (funktio??), joka hakee css-säännöllä halutun asian, nyt id:n teksti muotoilut
+    // muistiinpanot scriptin sisällä kahdella kautta-viivalla
+
+</script>
+
+
+</body>
+</html>
