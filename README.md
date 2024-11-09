@@ -1,1 +1,3 @@
-# Ohjelmisto 1 -kurssin tehtäviä
+# Tehtäviä
+# Ohjelmisto 1: Python 
+# Ohjelmisto 2: Python, JavaScript
