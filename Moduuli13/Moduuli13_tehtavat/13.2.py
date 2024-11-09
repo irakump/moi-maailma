@@ -5,29 +5,38 @@
 # {"ICAO":"EFHK", "Name":"Helsinki Vantaa Airport", "Municipality":"Helsinki"}.
 
 from flask import Flask, Response
-import requests
-import requests.exceptions
 import json
-
-api_token = ""      # api_token poistettu
+import mysql.connector
 
 app = Flask(__name__)
 
 @app.route("/airport/<icao>")
 
 def get_name_and_municipality(icao):
-    url = f"https://airportdb.io/api/v1/airport/{icao}?apiToken={api_token}"
 
     # virheiden käsittely
     try:
-        response = requests.get(url)
-        response_body = response.json()
+        connection = mysql.connector.connect(
+            host='127.0.0.1',
+            port=3306,
+            database='flight_game',
+            user='ira',
+            password='lunni',
+            autocommit=True,
+            charset='utf8mb4',
+            collation='utf8mb4_general_ci'
+        )
+
+        sql = f'SELECT ident, name, municipality FROM airport WHERE ident = "{icao}";'
+        cursor = connection.cursor()
+        cursor.execute(sql)
+        result = cursor.fetchone()
 
         status_code = 200
         answer = {
-            "ICAO": response_body["ident"],
-            "Name": response_body["name"],
-            "Municipality": response_body["municipality"]
+            "ICAO": result[0],
+            "Name": result[1],
+            "Municipality": result[2]
         }
 
     except ValueError:
