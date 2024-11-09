@@ -6,20 +6,22 @@
 import mysql.connector
 
 connection = mysql.connector.connect(                                            #SQL-yhteys
-             host='127.0.0.1',
-             port= 3306,
-             database='flight_game',
-             user='ira',
-             password='lunni',
-             autocommit=True
+            host='127.0.0.1',
+            port= 3306,
+            database='flight_game',
+            user='ira',
+            password='lunni',
+            autocommit=True,
+            charset = 'utf8mb4',
+            collation = 'utf8mb4_general_ci'
              )
 
 def find_airport_information(icao_code):                                         #luodaan fuktio
     sql = f"SELECT name, municipality FROM airport WHERE ident = '{icao_code}'"
     cursor = connection.cursor()
     cursor.execute(sql)
-    result = cursor.fetchall()
-    print(f"Lentokentän nimi on {result[0][0]} ja sijaintikunta {result[0][1]}.")
+    result = cursor.fetchone()
+    print(f"Lentokentän nimi on {result[0]} ja sijaintikunta {result[1]}.")
     return
 
 #pääohjelma

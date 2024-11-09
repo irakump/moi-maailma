@@ -9,12 +9,14 @@ import mysql.connector
 from geopy import distance
 
 connection = mysql.connector.connect(
-             host='127.0.0.1',
-             port= 3306,
-             database='flight_game',
-             user='ira',
-             password='lunni',
-             autocommit=True
+            host='127.0.0.1',
+            port= 3306,
+            database='flight_game',
+            user='ira',
+            password='lunni',
+            autocommit=True,
+            charset = 'utf8mb4',
+            collation = 'utf8mb4_general_ci'
              )
 
 def find_coordinates(icao_code):                                #funktio

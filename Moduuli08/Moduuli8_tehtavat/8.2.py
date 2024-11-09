@@ -6,12 +6,14 @@
 import mysql.connector
 
 connection = mysql.connector.connect(
-             host='127.0.0.1',
-             port= 3306,
-             database='flight_game',
-             user='ira',
-             password='lunni',
-             autocommit=True
+            host='127.0.0.1',
+            port= 3306,
+            database='flight_game',
+            user='ira',
+            password='lunni',
+            autocommit=True,
+            charset = 'utf8mb4',
+            collation = 'utf8mb4_general_ci'
              )
 
 def list_airports_per_types(iso_country):                               #funktio
