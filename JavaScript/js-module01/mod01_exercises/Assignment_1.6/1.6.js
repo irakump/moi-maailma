@@ -20,11 +20,12 @@ if (userSelection === true) {
   // tarkistetaan, onko luku nollaa pienempi
   if (number < 0) {
     document.querySelector("#print").innerHTML = "The square root of a negative number is not defined."
+  } else {
+      // lasketaan neliöjuuri
+      const squareRoot = Math.sqrt(number)
+      // tulostus
+      document.querySelector("#print").innerHTML = `Square root of ${number} is ${squareRoot}.`
   }
-  // lasketaan neliöjuuri
-  const squareRoot = Math.sqrt(number)
-  // tulostus
-  document.querySelector("#print").innerHTML = `Square root of ${number} is ${squareRoot}.`
 } else {
-  document.querySelector("#print").innerHTML = "The square root is not calculated."
-}
+    document.querySelector("#print").innerHTML = "The square root is not calculated."
+  }
