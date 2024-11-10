@@ -5,3 +5,20 @@
 
 "use strict";
 
+// pyydetään vuosi
+const year = parseInt(prompt("Enter a year."));
+let result;
+
+// karkausvuosilaskuri
+if (year % 4 === 0) {
+  if (year % 100 === 0 && year % 400 !== 0) {
+    result = "is not a leap year.";
+  } else {
+    result = "is a leap year.";
+  }
+} else {
+  result = "is not a leap year.";
+}
+
+// tulostetaan HTML-dokumenttiin
+document.querySelector("#year").innerHTML = `${year} ${result}`;

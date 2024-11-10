@@ -11,3 +11,20 @@
 
 "use strict";
 
+// confirmation window
+const userSelection = confirm("Should I calculate the square root?");
+
+if (userSelection === true) {
+  const number = parseFloat(prompt("Enter a number."))
+
+  // tarkistetaan, onko luku nollaa pienempi
+  if (number < 0) {
+    document.querySelector("#print").innerHTML = "The square root of a negative number is not defined."
+  }
+  // lasketaan neliöjuuri
+  const squareRoot = Math.sqrt(number)
+  // tulostus
+  document.querySelector("#print").innerHTML = `Square root of ${number} is ${squareRoot}.`
+} else {
+  document.querySelector("#print").innerHTML = "The square root is not calculated."
+}
