@@ -5,7 +5,7 @@
 // First, program asks the user for the number of dice rolls.
 // Then the program throws a die as many times as the user defined.
 // Print the sum of the results in the console or in the HTML document.
-
+//
 "use strict";
 
 const diceTotal = parseInt(prompt("How many dice should I roll? Enter a number."));
