@@ -15,26 +15,26 @@ let diceThrown = 0;
 
 while (diceThrown < diceTotal) {
   // arvotaan luku väliltä ]0, 1[
-  let diceResult = Math.random()
+  let diceResult = Math.random();
   // muutetaan luku nopan silmäluvuiksi [1, 6]
   if (diceResult < (1 / 6)) {
-    diceResult = 1
+    diceResult = 1;
   } else if (diceResult < (2 / 6)) {
-    diceResult = 2
+    diceResult = 2;
   } else if (diceResult < (3 / 6)) {
-    diceResult = 3
+    diceResult = 3;
   } else if (diceResult < (4 / 6)) {
-    diceResult = 4
+    diceResult = 4;
   } else if (diceResult < (5 / 6)) {
-    diceResult = 5
+    diceResult = 5;
   } else {
-    diceResult = 6
+    diceResult = 6;
   }
-  console.log(`Dice result: ${diceResult}`)
-  sum += diceResult     // lisätään noppa summaan
+  console.log(`Dice result: ${diceResult}`);
+  sum += diceResult;     // lisätään noppa summaan
   diceThrown++;         // kasvatetaan muuttujaa yhdellä
 }
 
 // tulostetaan tulos HTML-dokumenttiin ja konsoliin
-document.querySelector("#result").innerHTML = `Dice rolled: ${diceTotal}, sum: ${sum}`
-console.log(`Sum: ${sum}`)
+document.querySelector("#result").innerHTML = `Dice rolled: ${diceTotal}, sum: ${sum}`;
+console.log(`Sum: ${sum}`);
