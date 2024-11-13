@@ -36,5 +36,5 @@ while (diceResult !== 6) {
   diceResult = rollADice();
   diceResultHTML += `<li>${diceResult}</li>`;
 }
-document.querySelector("#text").innerHTML = "Let's roll a dice until the result is 6."
+document.querySelector("#text").innerHTML = "Let's roll a dice until the result is 6.";
 document.querySelector("#result").innerHTML = diceResultHTML;
