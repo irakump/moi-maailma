@@ -81,7 +81,7 @@ for (let i = 0; i < names.length; i++) {
 - shift()           // deletes and returns the 1st item in the array = poistaa ja palauttaa 1. jäsenen (eli 0. alkio)
 - pop()             // deletes and returns the last item in the array = poistaa ja palauttaa viimeisen jäsenen
 - push(value)       // adds the value at the end of the array, multiple values separated by commas = lisää arvon listan loppuun, samat arvot erotettu pilkulla
-- includes(value)   // checks whether the array contains the given value = tarkistaa onko tietty arvo taulukossa
+- includes(value)   // checks whether the array contains the given value = tarkistaa onko tietty arvo taulukossa, palauttaa true/false
 - unshift()         // lisää taulukon alkuun alkion
 */
 
