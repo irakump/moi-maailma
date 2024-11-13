@@ -31,6 +31,8 @@ console.log(items[6]);
 console.log("Taulukon pituus:", items.length);  // ei tarvitse käyttää muotoilua `${}` vaan pilkulla voi erottaa
 // tulostukset
 
+
+
 // TAULUKOIDEN LÄPIKÄYNTI LOOPIN (SILMUKAN) AVULLA
 console.log("------------------------------")
 
