@@ -7,7 +7,7 @@
 
 // The program asks for the number of voters.
 // The program asks each voter in turn who they will vote for. Voter should enter candidate
-// name. If the voter enters an empty value instead of the voting number (name?), it will be interpreted
+// name. If the voter enters an empty value instead of the voting name, it will be interpreted
 // as an empty vote. The program announces the name of the winner and the results by printing
 // it to the console:
 // The winner is pamela with 3 votes.
@@ -31,7 +31,7 @@
 const candidates = [];
 
 // pyydetään ehdokkaiden lukumäärä
-const candidateAmount = 3 //parseInt(prompt("Enter the number of candidates."))
+const candidateAmount = parseInt(prompt("Enter the number of candidates."))
 
 // pyydetään nimet
 for (let i = 1; i <= candidateAmount; i++) {
@@ -45,18 +45,19 @@ for (let i = 1; i <= candidateAmount; i++) {
   candidates.push(candidate);
 }
 
-// tulostetaan olio-lista konsoliin
-console.log(candidates);
+// tulostetaan ehdokkaat konsoliin:
+console.log("Candidates:")
+for (let i = 0; i < candidateAmount; i++) {
+  console.log(candidates[i].name)
+}
 
 // pyydetään äänestäjien määrä
-const voteAmount = 3 //parseInt(prompt("Enter the number of voters."))
+const voteAmount = parseInt(prompt("Enter the number of voters."))
 
 // äänestyskierros
 for (let i = 1; i <= voteAmount; i++) {
   const vote = prompt(`Vote ${i}. Who will you vote for? Enter the name.`)
   if (vote !== "") {
-    console.log(candidates[1].name);
-    console.log(candidates[1].votes);
 
     // jos nimi on taulukossa, lisätään ääni
     for (let i = 0; i < candidateAmount ; i++) {
@@ -69,13 +70,15 @@ for (let i = 1; i <= voteAmount; i++) {
   }
 }
 
-console.log(candidates)
-
-// tuloksen julkistaminen kesken
-
+// järjestetään oliot äänimäärän mukaan laskevaan järjestykseen
 candidates.sort((a, b) => {
-   console.log(a, b);
-   return b - a;
+   //console.log(a.votes, b.votes);
+   return b.votes - a.votes;
 });
 
-console.log(candidates)
+// tulosten julkistus
+console.log(`The winner is ${candidates[0].name} with ${candidates[0].votes} votes.`);
+console.log("results:")
+for (let i = 0; i < candidateAmount; i++) {
+  console.log(`${candidates[i].name}: ${candidates[i].votes} votes`)
+}
