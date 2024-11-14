@@ -214,4 +214,68 @@ greet("Hagrid");
 greet2("Hagrid");
 greet3("Hagrid");
 
+//////////////////////////////
+///////////////////////////////
+console.log("---------------------------")
+//////////////////////////////
+//////////////////////////////
 
+// tuntiesimerkki 2.2
+// Write a program that asks the user for the number of participants. After this, the program
+// asks for the names of all participants. Finally, the program prints the names of the
+// participants on the web page in an ordered list (<ol>) in alphabetical order. (2p)
+console.log("Assignment 2.2")
+const participantNames = [];
+let participantsHTML = "";
+
+// HTML-dokumentista voi hakea tietoa, esim. jos HTML:ssä on lista:
+const namelist = document.querySelector("#namelist");
+// kun etsii jotakin elementtiä, kannattaa tulostaa se konsoliin (näkee toimiiko, testi)
+console.log(namelist);
+namelist.innerHTML = "";
+
+// kysytään osallistujamäärä
+const num = parseInt(prompt("Give a number of participants."));
+
+// luodaan funktio, joka kysyy nimet
+function askNames() {
+  for (let i = 0; i < num; i++) {
+    console.log(i);
+    let name = prompt("Enter a name.");
+    participantNames.push(name);
+  }
+
+  console.log(participantNames);
+
+}
+
+// lisätään taulukon jäsenet HTML-dokumenttiin
+function printNames() {
+  // versio 1. käytetään for/i-looppia ja innerHTML (for/i-loopin käyttö silloin, kun tarvitsee iteraattorin)
+  //for (let i = 0; i < participantNames.length; i++) {
+  //  // tulostetaan nimet konsoliin
+  //  console.log(participantNames[i]);
+  //  participantsHTML += `<li>${participantNames[i]}</li>`
+  //}
+  //namelist.innerHTML = participantsHTML;
+  //console.log(participantsHTML);
+
+  // PAREMPI TAPA LUODA <li>-elementit: DOM // !!!!!!!!!!!!!!!!!!!!!!!!!
+  // versio 2. for/of ja create element // jos haluaa käydä taulukon kaikki arvot läpi (ilman indeksiä), voi käyttää for/of-silmukkaa
+  for (const name of participantNames) {
+    console.log(name);
+
+    // luodaan tyhjä elementti <li></li>
+    let liElement = document.createElement('li');
+
+    // annetaan elementille sisältö <li>name</li>
+    liElement.innerHTML = name;
+
+    // lisätään HTML-dokumentissa olevalle <ol>-elementille lapsielementti <li> eli loopissa aina uusi rivi
+    namelist.appendChild(liElement);
+  }
+}
+
+// kutsutaan funktioita
+askNames();
+printNames();
