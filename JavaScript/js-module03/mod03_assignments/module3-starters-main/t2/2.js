@@ -19,10 +19,8 @@ for (let item of items) {
 
   // lisätään lapsi-elementti HTML-dokumenttiin
   target.appendChild(liElement);
-
-  console.log(item)
-  if (item === "Second item") {
-    // lisätään luokka elementtiin
-    liElement.classList.add("my-item");
-  }
 }
+
+// lisätään luokka toiseen lista-elementtiin
+let secondLi = document.getElementsByTagName("li")[1];
+secondLi.classList.add("my-item");
