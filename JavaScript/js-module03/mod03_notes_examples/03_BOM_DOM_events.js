@@ -61,7 +61,7 @@ paragraphs[2].textContent = "Kolmas kappale.";
 // querySelectorilla saadaan valittua ensimmäinen "juttu"
 // querySelectorAll: saadaan kaikki valittua
 
-// tehdään järjestetty lista, jossa on 5 alkiota /////////// ks. tähän tuntiesimerkki!
+// tehdään järjestetty lista, jossa on 5 alkiota
 
 const listContents = ["pencil", "rubber", "bag", "desc"];
 // haetaan viittaus diviin id:n avulla
