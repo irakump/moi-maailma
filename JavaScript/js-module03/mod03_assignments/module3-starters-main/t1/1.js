@@ -4,7 +4,7 @@
 // <li>First item</li>
 // <li>Second item</li>
 // <li>Third item</li>
-// Add class my-list to the element with id="target".
+// Add class my-list to the element with id="target"
 
 const items = ["First item", "Second item", "Third item"];
 const target = document.querySelector("#target");
