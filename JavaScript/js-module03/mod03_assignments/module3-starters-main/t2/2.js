@@ -9,7 +9,8 @@
 const items = ["First item", "Second item", "Third item"];
 const target = document.querySelector("#target");
 
-for (item of items) {
+for (let item of items) {
+
   // luodaan tyhjä li-elementti
   let liElement = document.createElement("li");
 
@@ -18,7 +19,10 @@ for (item of items) {
 
   // lisätään lapsi-elementti HTML-dokumenttiin
   target.appendChild(liElement);
-}
 
-// lisätään luokka elementtiin
-target.classList.add("my-list")
+  console.log(item)
+  if (item === "Second item") {
+    // lisätään luokka elementtiin
+    liElement.classList.add("my-item");
+  }
+}
