@@ -8,17 +8,15 @@
 
 const items = ["First item", "Second item", "Third item"];
 const target = document.querySelector("#target");
+let inner = "";
 
-for (item of items) {
-  // luodaan tyhjä li-elementti
-  let liElement = document.createElement("li");
-
-  // annetaan elementille sisältö
-  liElement.innerHTML = item;
-
-  // lisätään lapsi-elementti HTML-dokumenttiin
-  target.appendChild(liElement);
+// luodaan merkkijono
+for (let item of items) {
+  inner += `<li>${item}</li>`;
 }
+
+// lisätään merkkijono HTML-dokumenttiin
+document.querySelector("#target").innerHTML = inner;
 
 // lisätään luokka elementtiin
 target.classList.add("my-list")
