@@ -7,7 +7,6 @@
 // Add class my-list to the element with id="target"
 
 const items = ["First item", "Second item", "Third item"];
-const target = document.querySelector("#target");
 let inner = "";
 
 // luodaan merkkijono
