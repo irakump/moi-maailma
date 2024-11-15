@@ -12,7 +12,7 @@ const target = document.querySelector("#target");
 for (let item of items) {
 
   // luodaan tyhjä li-elementti
-  let liElement = document.createElement("li");
+  const liElement = document.createElement("li");
 
   // annetaan elementille sisältö
   liElement.innerHTML = item;
