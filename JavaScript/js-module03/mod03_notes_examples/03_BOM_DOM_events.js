@@ -159,12 +159,216 @@ document.addEventListener("keypress", function (event) {
 
 /////////////////////////////////////////////////////
 
+// MUISTIINPANOT MATERIAALISTA:
+/*
+-window = selainikkuna, tuettu kaikissa selaimissa
+-kaikki globaalit javascript-oliot, funktiot ja muuttujat ovat automaattisesti
+  ikkuna-käyttöliittymän jäseniä (window interface)
+  esim. window.document.querySelector(".button") on sama kuin
+        document.querySelector(".button")   --> eli ei tarvitse kirjoittaa alkuun window
+
+- alert() -funktio = avaa pop-up-ikkunan, jossa on teksti ja ok-nappi. Voi antaa käyttäjälle
+  tiedon, esim. jos joku toiminto onnistuu tai epäonnistuu. Ohjelma on pysähdyksissä,
+  kunnes käyttäjä painaa OK
+  alert("Some text here");
+
+- confirm() -funktio avaa pop-up-ikkunan, jossa on kaksi nappia: OK ja Cancel
+  --> käyttäjä voi valita, suoritetaanko joku toiminto vai ei
+  esim.
+  const answer = confirm("Some question");
+  // vastauksen tulostus konsoliin:
+  console.log(answer);
+
+  --> käyttäjän vastaus tallennetaan answer-muuttujaan boolean arvona true (= OK) tai false (= Cancel)
+
+- prompt() -funktio avaa pop-up-ikkunan, johon käyttäjä voi antaa syötteen
+  const answer = prompt("Title", "Initial content for the text field")
+  --> ensimmäinen "parametri" eli title: otsikko pop-up-ikkunassa
+  --> toinen "parametri?" eli initial content... on vapaaehtoinen (=default, oletusarvo)
+      on valmiina kirjoitusruudussa, voisi esim. olla "write answer here" tms.
+
+  --> jos käyttäjä ei syötä mitään, answer-muuttujan arvo on null
+
+NAVIGATOR-INTERFACE (navigaattori-käyttöliittymä)
+- voi hakea tietoa selaimesta
+- navigator.geolocation palauttaa laitteen gps-koordinaatit
+  --> ks. HTML-tiedostosta koodi (tulostaa kartan, johon sijainti merkitty)
+          --> sen käyttö lentopelissä!
+
+LOCATION-INTERFACE
+- käyttöliittymä kertoo dokumentin osoitteen, usein käytetään selaimen "uudelleen ohjaamiseen"
+  esim.
+  location.href = "http://metropolia.fi";
+
+ */
+
+alert("Moikkamoi")
+const answer = confirm("Do you want to add a member to the list?")
+console.log(`User answer to adding: ${answer}`)
+
+const answer1 = prompt("Input your name", "name")
+
+/*
+DOM = Document Object Model
+- HTML-dokumentin "puukaavio"-kuvaus
+- DOM = standardi, joka määrittää, miten HTML-elementtejä valitaan, muokataan, lisätään
+  tai poistetaan
+- kaikki elementit, attribuutit ja sisältö (esim. teksti) = node = solmu
+
+-kaavio:
+          Document
+              |
+        root    element:    <html>
+        |                     |
+    Element:                 Element:
+    <head>                    <body>
+      |                     /          \
+element:   Attribute: ---- element:     element:
+<title>      "href"         <a>            <h1>
+  |                          |               |
+ Text:                      Text:           Text:
+"My title"                 "My link"      "My header"
 
 
+-parent/child + sibling (aikuinen/lapsi):
+  -h1-elementti on body-elementin lapsi sekä a-elementin sisarus
+  --> eli elementin "seuraava" elementti on aina lapsi, ja "samanarvoinen" vierekkäinen elementti sisarus
+  -body-elementti on sekä h1- että a-elementin vanhempi
 
 
+DOCUMENT-INTERFACE
+- document-käyttöliittymä edustaa nettisivua
+- sisältää kaikki muut oliot (kohteet)
+- jos haluaa valita minkä tahansa HTML-elementin dokumentista, pitää aloittaa document-(käyttö)liittymästä
+  esim.
+  document.getElementbyID("logo");    --> tässä haetaan elementt, jonka id on logo
+
+  TÄRKEIMMÄT FUNKTIOT JA TOIMINNOT:
+
+  - haetaan yksi elementti id:n perusteella (css-selectorin avulla)
+    --> voisi hakea yhden elementin myös luokan perusteella (".logo"), luokka jonka nimi on logo
+  document.querySelector("#logo")
+
+  - haetaan kaikki elementit, joissa on sama luokka (css-luokkaselektorin avulla)
+  document.querySelectorAll(".button")
+
+  -haetaan yksi elementti sen id:n perustaalla
+  document.getElementById("#logo")
+
+  --käskyjä voi kohdistaa valittuun elementtiin:
+
+  -haetaan kaikki p-elementit valitusta elementistä
+  element.getElementsByTagName("p")
+  --> getElementsByTagName palauttaa taulukon, indeksit alkaa nollasta (samoin kuin pythonin listoissa)
+
+  -lisätään lapsi-node (solmu) elementtiin
+  element.appendChild(child)
+
+  -poistetaan lapsi-node
+  element.removeChild(child)
+
+  -lisätään HTML-koodi elementtiin
+  element.innerHTML
+
+  -lisätään teksti elementtiin
+  element.innerText
+
+ */
+
+// ESIMERKKEJÄ:
+// https://github.com/ilkkamtk/JavaScript-english/blob/main/BOM-DOM-event.md#examples
+
+// toggle = vaihtaa
+
+/*
+
+EVENT handling (käsittely)
+- käsitellään käyttäjän toimintoja ja vastauksia
+- esim. käyttäjä painaa nappia, javascriptillä voi näyttää infoboksin
+
+<button>Click me</button>
+<script>
+const button = document.querySelector('button');
+button.addEventListener('click', function(evt){
+  alert('Element ' + evt.currentTarget.tagName + ' was clicked');
+});
+</script>
+
+- event handleria kutsutaan myös callback-funktioksi:
+  https://github.com/ilkkamtk/JavaScript-english/blob/main/extras.md#callback-functions-and-callback-hell
+
+- lisää infoa eventistä: https://developer.mozilla.org/en-US/docs/Web/API/Event
+
+- mouse related events: https://developer.mozilla.org/en-US/docs/Web/API/Element#mouse_events
+
+- syntax (3 tapaa eventin käsittelyyn: vanha (90-luku), perinteinen (2000-luku), nykyaikainen)
+
+  - modern: addEventListener (tätä kannattaa käyttää, ei muita / vanhempia tapoja!)
+
+esim.
+
+<button>Click me</button>
+<script>
+    const button = document.querySelector('button');
+
+function A(evt){
+  alert('This is function A');
+  nappi.removeEventListener('click', A);
+  nappi.addEventListener('click', B);
+}
+
+function B(evt){
+  alert('This is function B');
+}
+
+nappi.addEventListener('click', A);
+</script>
 
 
+-- OLETUSTAPAHTUMAN PYSÄYTTÄMINEN (stopping default action of an event)
+
+  - joillakin elementeillä, esim. <a> tai <form>, on oletustapahtumia (default actions)
+    esim. <a> -elementti vie osoitteeseen, joka on merkitty href-attribuuttiin (linkki)
+          <form> -elementti avaa osoitteen, joka on merkitty action-attribuuttiin, kun lomake lähetetään
+
+  - esim. kun täyttää ja lähettää lomakkeen, oletuksena esim. uusi osoite avautuu uuteen ikkunaan
+    --> toiminto halutaan estää
+
+  - preventDefault -funktio estää oletustoiminnot:
+  esim.
+
+<form>
+  <div>
+    <input name="fName" type="text" placeholder="first name">
+  </div>
+  <div>
+    <input name="lName" type="text" placeholder="last name">
+  </div>
+  <div>
+    <input name="submit" type="submit" value="Send">
+  </div>
+</form>
+<p></p>
+
+<script>
+// select the elements
+const form = document.querySelector('form');
+const fname = document.querySelector('input[name=fName]');
+const lname = document.querySelector('input[name=lName]');
+const p = document.querySelector('p');
+
+// When the form is submitted...
+form.addEventListener('submit', function(evt) {
+    // ... prevent the default action.
+    evt.preventDefault();
+    // Here you can check, for example, whether the fields on the form have been filled in correctly,
+    // after which it could be sent using the fetch method, for example
+    // However, for now, let's print the user input as an example.
+    p.innerText = `Your name is ${fname.value} ${lname.value}`;
+});
+</script>
+
+ */
 
 
 
