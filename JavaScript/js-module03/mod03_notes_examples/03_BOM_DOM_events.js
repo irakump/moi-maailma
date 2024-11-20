@@ -324,6 +324,8 @@ function B(evt){
 nappi.addEventListener('click', A);
 </script>
 
+// mouseenter -event: kun hiiri tulee elementin päälle, tapahtuu jokin asia
+// mouseleave -event: kun hiiri poistuu elementin päältä
 
 -- OLETUSTAPAHTUMAN PYSÄYTTÄMINEN (stopping default action of an event)
 
