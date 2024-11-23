@@ -1,4 +1,21 @@
+// 3.5
+/*
+Open t5 folder in your IDE/editor. Create multiple <article> elements that contain
+heading, image, image caption and text and populate them with the data from picArray.
+Add the articles to the <section> element. (5p)
+The structure of the articles should be this:
+<article class="card">
+   <h2>title_from_picArray</h2>
+   <figure>
+      <img src="medium_image_from_picArray" alt="title_from_picArray">
+      <figcaption>caption_from_picarray</figcaption>
+   </figure>
+   <p>description_from_picArray</p>
+</article>
+*/
+
 'use strict';
+
 const picArray = [
   {
     title: 'Title 1',
@@ -92,4 +109,49 @@ const picArray = [
   },
 ];
 
-// add your code here
+
+// haetaan section-elementti id:n perusteella
+const sectionElement = document.querySelector("#pictures");
+
+// käydään läpi taulukko (ilman indeksiä)
+for (const pic of picArray) {
+  console.log(pic.title);
+
+  // luodaan artikkeli-elementti
+  let a = document.createElement("article");
+
+  // lisätään luokka
+  a.classList.add("card");
+
+  // liitetään elementti sectioniin (child-element)
+  sectionElement.appendChild(a);
+
+  // luodaan h2-elementti
+  let h2 = document.createElement("h2");
+  h2.innerText = pic.title;
+  a.appendChild(h2);
+
+  // figure
+  let f = document.createElement("figure");
+  a.appendChild(f);
+
+  // img
+  let i = document.createElement("img");
+
+  // lisätään attribuutit
+  i.src = pic.image.medium;
+  i.alt = pic.title;
+
+  // lisätään elementti figuren alle (child-element)
+  f.appendChild(i);
+
+  // figcaption
+  let fc = document.createElement("figcaption");
+  fc.innerText = pic.caption;
+  f.appendChild(fc);
+
+  // p-elementti
+  let p = document.createElement("p");
+  p.innerText = pic.description;
+  a.appendChild(p);
+}
