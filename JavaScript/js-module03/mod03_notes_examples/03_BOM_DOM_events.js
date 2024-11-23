@@ -88,7 +88,6 @@ listContents.push("laptop");
 
 listContents.sort();
 
-
 // BOM-rajapinta (window-olio)
 // luetaan selaimen "sijainti" (url)
 window.console.log(window.location.href)
@@ -98,7 +97,7 @@ window.console.log(window.location.href)
 const printButton = document.getElementById("print");
 
 // asetetaan napille tapahtumankäsittelijä click-eventille
-printButton.addEventListener("click", function (event) {
+printButton.addEventListener("click", function(event) {
 
   console.log("sort and print button clicked, event", event);
   listContents.sort();
@@ -115,7 +114,7 @@ addButton.addEventListener("click", () => {
 });
 
 // hiiritapahtumia
-document.addEventListener("mousemove", function (event) {
+document.addEventListener("mousemove", function(event) {
   //console.log(event);
   document.querySelector("#output").textContent = `Hiiren
   osoittimen koordinaatit: ${event.clientX}, ${event.clientY}`;
@@ -125,7 +124,7 @@ document.addEventListener("mousemove", function (event) {
   }
 });
 
-h1Element.addEventListener("mouseenter", function(){
+h1Element.addEventListener("mouseenter", function() {
   // piilotetaan elementti css avulla, kun hiiren osoitin menee sen päälle
   h1Element.classList.add("hidden");
 })
@@ -133,21 +132,79 @@ h1Element.addEventListener("mouseenter", function(){
 // Näppäimistö-eventti "toggle" (h piilottaa ja näyttää koko sivun)
 const keyLog = [];
 let hidden = false;
-document.addEventListener("keypress", function (event) {
-
-  keyLog.push(event.key);
-  console.log("logi", keyLog)
-  if (event.key === "h") {
-    if (!hidden) {
-      document.querySelector("body").classList.add("hidden");
-    } else {
-      document.querySelector("body").classList.remove("hidden");
-    }
-    hidden = !hidden;
-  }
-});
+//document.addEventListener("keypress", function (event) {
+//
+//  keyLog.push(event.key);
+//  console.log("logi", keyLog)
+//  if (event.key === "h") {
+//    if (!hidden) {
+//      document.querySelector("body").classList.add("hidden");
+//    } else {
+//      document.querySelector("body").classList.remove("hidden");
+//    }
+//    hidden = !hidden;
+//  }
+//});
 
 // tapahtumakäsittelyt: ainoa oikea tapa javascriptissä on addEventListener !!!!! (muut vanhoja)
+
+// Oletustapahtuma ja sen estäminen
+// estetään formin automaattinen lähetys (sivun päivitys)
+const form = document.querySelector('form');
+const fname = document.querySelector("input[name=fName]");
+const lname = document.querySelector("input[name=lName]");
+
+// kun lähettää lomakkeen, tulostetaan muuttujien arvot konsoliin
+// TÄTÄ VOISI KÄYTTÄÄ LENTOPELISSÄ?? (kun syöttää seuraavan lentokentän icaon / numeron tms.)
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log(event);
+  console.log(`Etunimi: `, fname.value);
+  console.log(`Sukunimi:`, lname.value);
+})
+
+
+// NAVIGATOR-INTERFACE - tuntimuistiinpanot
+
+// navigaattorin avulla voi lisätä koordinaatit / kartan, jossa näkyy oma sijainti
+
+
+// Options for retrieving location information (optional)
+const options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+// A function that is called when location information is retrieved
+function success(pos) {
+  const crd = pos.coords;
+
+  // Printing location information to the console
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+
+  // Use the leaflet.js library to show the location on the map (https://leafletjs.com/)
+  const map = L.map('map').setView([crd.latitude, crd.longitude], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  L.marker([crd.latitude, crd.longitude]).
+      addTo(map).
+      bindPopup('I am here.').
+      openPopup();
+}
+
+// Function to be called if an error occurs while retrieving location information
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+// Starts the location search
+navigator.geolocation.getCurrentPosition(success, error, options);
 
 
 /*
@@ -372,5 +429,45 @@ form.addEventListener('submit', function(evt) {
 
  */
 
+///////////////////////
+// muistiinpanoja
+
+// tietoa voi hakea koko dokumentista tai jostakin sen osasta, jolloin ohjelman
+// ei tarvitse käydä läpi koko dokumenttia:
+
+// testi, tallennetaan main-elementti
+const main = document.querySelector("main");
+// haetaan main-elementistä section-elementti
+const section1 = main.querySelector("section");
+
+// aina kun tulee virhe, ks. console (näyttää virheet)!
+
+// kaksi tapaa lisätä tekstiä:
+// element.innerHTML = "";    // tämä silloin, jos haluaa lisätä html:ää
+// element.innerText = "";    // voi asettaa pelkkää tekstiä, palauttaa näkyvän tekstin
+// element.textContent = "";  // palauttaa sekä näkyvän että piilotetun tekstin
+
+// attribuutin lisääminen elementtiin, 2 tapaa:
+// element.setAttribute("src", "test.png");
+// element.src = "test.png";
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+// testi - footerille event
+//const footer = document.querySelector("footer");
+//footer.addEventListener("click", function(event) {
+//  alert("You clicked footer!")
+//})
 
 
+// querySelector on css-komento, document käy koko HTML-dokumentin läpi (document.querySelector)
+
+  // luodaan elementti img
+  let i = document.createElement("img");
+
+  // lisätään attribuutti (notaatiolla)   // voisi tehdä myös i.setAttribute
+  //i.src = pic.image.medium;
+
+  // toinen tapa asettaa kuva:
+  //i.setAttribute("src", pic.image.medium);
