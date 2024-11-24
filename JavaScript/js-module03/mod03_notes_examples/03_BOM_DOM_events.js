@@ -471,3 +471,19 @@ const section1 = main.querySelector("section");
 
   // toinen tapa asettaa kuva:
   //i.setAttribute("src", pic.image.medium);
+
+// 3.9 tehtävän muistiinpanoja - INCLUDES() JA SPLIT() -metodit
+// includes-metodilla voi kokeilla, onko jokin termi listassa
+// array.includes(termi)
+// voisiko tehdä niin, että tallentaa inputin merkkijonoksi, ja käy kirjaimet läpi includesilla,
+//  ja jos on +, tulee summa, jos -, miinuslasku jne?
+
+// split()
+// split() splits a string into an array of substrings, and returns the array:
+// let text = "How are you doing today?";
+// const myArray = text.split(" ");
+// How,are,you,doing,today?
+// eli ensin split() -metodi ja sitten includes()
+
+// metodeilla voi myös käydä läpi käyttäjän syötteen, esim. "2+13", ei tarvitse olla listassa
+
