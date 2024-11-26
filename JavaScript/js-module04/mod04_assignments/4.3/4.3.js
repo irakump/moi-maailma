@@ -54,6 +54,7 @@ form.addEventListener("submit", async function (event) {
       const url = j.show.url;
       a.setAttribute("href", url);
       img.setAttribute("src", j.show.image?.medium)
+      img.setAttribute("alt", j.show.name);
       div.innerHTML = j.show.summary;
     }
 
