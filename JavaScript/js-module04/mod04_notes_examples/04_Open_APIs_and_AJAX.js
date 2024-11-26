@@ -18,8 +18,12 @@ X = XML, eXtensible Markup Language
 
  */
 
-// PROMISE = lupaus, object, joka palauttaa tietyn arvon
+// PROMISE = lupaus, object (olio?), joka "lupaa" palauttaa tietyn arvon
 //  3 tasoa: fulfilled, rejected, pending
+
+// fetch() and json() functions both return a promise
+// Hence, you need use the await keyword to wait for the promise to be fulfilled.
+// In this case that means that the data has been loaded.
 
 // FETCH() - hakee tiedoston json-muodossa
 
@@ -114,24 +118,41 @@ form.addEventListener("submit", async function (event) {
 // jos console logilla tulee "promise", puuttuu jostakin kohdasta awate -sana???
 
 
+getAJoke();
+fetchImages();
 
+console.log("script end");
+
+/////////////////////////////////////
+
+// lue mod4 materiaalit JA  https://leafletjs.com/examples/quick-start/
 
 // muistiinpanoja
 
 // await = odottaa, että fetch tms. suorittaa tehtävänsä loppuun. Awaitia voi käyttää vain asynkronisen funktion kanssa
 // eli pitää olla async function, ja sen sisällä await fetch()
 // joke:n arvo sijoitetaan vasta, kun response.json() on valmis, siitä kertoo await
-// async = ohjelma ei jää odottamaan latausta, vaan jatkaa suoritusta funktion jälkeisestä kohdasta
+// async (asynchronous) = ohjelma ei jää odottamaan latausta, vaan jatkaa suoritusta funktion jälkeisestä kohdasta
 // --> siksi konsolissa on script start, script end ja vasta sitten vitsi. Script end ehditään suorittaa ennen vitsin hakua
 // response.json()    eli .json() palauttaa promisen
 
-getAJoke();
-fetchImages();
+// esimerkki, async funktio
+/*
+    async function asynchronousFunction() {                 // asynchronous function is defined by the async keyword
+        console.log('asynchronous download begins');
+        try {                                               // error handling: try/catch/finally
+            const response = await fetch('http://127.0.0.1:3000/airport/00A');    // starting data download, fetch returns a promise which contains an object of type 'response'
+            const jsonData = await response.json();          // retrieving the data retrieved from the response object using the json() function
+            console.log(jsonData.ICAO, jsonData.Name);    // log the result to the console
+        } catch (error) {
+            console.log(error.message);
+        } finally {                                         // finally = this is executed anyway, whether the execution was successful or not
+            console.log('asynchronous load complete');
+        }
+    }
 
-/////////////////////////////////////
-
-// lue mod4 materiaalit JA  https://leafletjs.com/examples/quick-start/
-
+asynchronousFunction();
+*/
 
 
 
@@ -140,6 +161,5 @@ fetchImages();
 
 
 
-console.log("script end");
 
 
