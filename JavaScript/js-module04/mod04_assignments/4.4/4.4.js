@@ -41,11 +41,12 @@ form.addEventListener("submit", async function (event) {
       h2.innerHTML = j.show.name;
       a.setAttribute("target", "_blank");
       const url = j.show.url;
-      a.setAttribute("href", url);
+      a.setAttribute("href", url);    // voisi myös olla a.href = url;
+      a.innerText = url;
 
       // lisätään (medium-kokoinen) kuva jos on, muuten placeholder
       if (j.show.image && j.show.image.medium) {
-        img.setAttribute("src", j.show.image?.medium);
+        img.setAttribute("src", j.show.image.medium);
       } else {
         img.setAttribute("src", "https://via.placeholder.com/210x295?text=Not%20Found");
       }
@@ -57,3 +58,16 @@ form.addEventListener("submit", async function (event) {
   }
 
 });
+
+
+
+// lyhyempi loop kuvan lisäämiselle
+//if (j.show.image.medium) {
+//  img.src = j.show.image.medium;
+//} else {
+//  img.src = "https://via.placeholder.com/210x295?text=Not%20Found";
+//}
+
+// tai vielä lyhyempi - ternary operator
+// ehto ? arvoJosOnTrue : arvoJosOnFalse;   eli
+// img.src = j.show.image ? j.show.image.medium : "https://via.placeholder.com/210x295?text=Not%20Found";

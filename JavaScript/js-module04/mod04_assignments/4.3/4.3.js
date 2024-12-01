@@ -48,11 +48,13 @@ form.addEventListener("submit", async function (event) {
       const div = document.createElement("div");
       ar.appendChild(div);
 
+      console.log(j.show);
+
       // lisätään elementeille arvot
       h2.innerHTML = j.show.name;
+      a.href = j.show.url;
       a.setAttribute("target", "_blank");
-      const url = j.show.url;
-      a.setAttribute("href", url);
+      a.innerText = j.show.url;
       img.setAttribute("src", j.show.image?.medium)
       img.setAttribute("alt", j.show.name);
       div.innerHTML = j.show.summary;
@@ -63,3 +65,7 @@ form.addEventListener("submit", async function (event) {
   }
 
 });
+
+
+// vaihtoehtoinen tapa kuvan lisäämiselle - jos medium-kuvaa ei löydy, asettaa placeholderin
+//img.src = j.show.image?.medium || "https://via.placeholder.com/210x295?text=Not%20Found";
