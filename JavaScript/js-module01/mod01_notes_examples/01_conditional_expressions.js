@@ -108,7 +108,7 @@ while (stillThrowing) {
 
 // yksinkertainen for-silmukka (yleisempi kuin do/while-silmukka)
 for (let i = 1; i < 10; i *= 2) {     // ehto on suluissa. Ensin esitellään muuttuja, sitten puolipiste,
-  console.log("iin arvo:", i);                           // seuraavaksi ehto: "kuinka kauan ajetaan", tässä niin kauan kun i on pienempi kuin 1
+  console.log("iin arvo:", i);                           // seuraavaksi ehto: "kuinka kauan ajetaan", tässä niin kauan kun i on pienempi kuin 10
 }
 
 // arvojen kasvattaminen: i++ (tämä lisää lukuun i luvun 1)
@@ -143,8 +143,8 @@ console.log("heittojen lukumäärät: ", throwCounts)
 // lasketaan heittomäärien keskiarvo for-silmukalla
 let sum = 0;
 for (let i=0; i<throwCounts.length; i++) {
-    sum += throwCounts[i]    // sama kuin sum = sum + throwCounts
+    sum += throwCounts[i];    // sama kuin sum = sum + throwCounts
 }
 //console.log(throwCounts.length)
-console.log("heittojen keskiarvo: ", sum/throwCounts.length)
+console.log("heittojen keskiarvo: ", sum/throwCounts.length);
 

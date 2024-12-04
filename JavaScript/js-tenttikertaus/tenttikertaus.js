@@ -6,7 +6,7 @@ const age = 21;
 const ageStr = age.toString();   // funktio toString() muuttaa luvun merkkijonoksi
 console.log(typeof ageStr);             // konsoliin tulostuu 'string'
 
-var name = 'Anneli';              // var-muuttujan arvoa voi vaihtaa, const ei.
+var name = 'Anneli';              // var- ja let-muuttujien arvoa voi vaihtaa, const ei.
 console.log(`Name is ${name}.`);        // `` -merkeillä ja ${} voi sisällyttää muuttujia tulosteeseen
 name = 'Pirjo';
 console.log('...');
@@ -48,7 +48,7 @@ console.log(typeof money1);
 console.log('....................')
 
 // prompt() -funktioon voi antaa syötteen
-//const userName = prompt('Enter name.');ambiguous
+//const userName = prompt('Enter name.');
 //console.log(`User's name is ${userName}.`);
 
 // matemaattiset operaatiot
@@ -62,7 +62,7 @@ jakojäännös = modulo % (esim 3%2===1, laskee kokonaisluvuilla jakojäännöks
  */
 console.log(3%2);
 
-// ++ kasvattaa lukua yhdell
+// ++ kasvattaa lukua yhdellä
 // -- vähentyy yhdellä
 // number += 5    --> lukuun lisätään 5, toimii myös muilla operaatioilla samoin
 
@@ -87,7 +87,7 @@ if (age < 18) {       // true, koska 15 < 18
 // jos ehto on epätosi, ei sitä suoriteta
 
 // vertailuoperaattorit = comparison operators
-// equal to == tai ===    // === myös tyyppi on sama, esim. 7 == '7' on true, mutte 7 === '7' false
+// equal to == tai ===    // === myös tyyppi on sama, esim. 7 == '7' on true, mutta 7 === '7' false
 // != eri kuin
 // < pienempi kuin
 // > suurempi kuin
@@ -137,18 +137,9 @@ console.log(numbers);
 //  OK===true, Cancel===false   // nämä palautuu
 
 // prompt() avaa pop-upin, johon voi kirjoittaa
-//prompt('Otsikko', 'tässä tekstiä nalkuun');
+//prompt('Otsikko', 'tässä tekstiä alkuun');
 // jos kenttä on tyhjä, palautuu arvo null
 
 // node = solmu, jokainen elementti, attribuutti ja konteksti (esim. teksti) on node
 
 // mod4
-
-
-
-
-
-
-
-
-

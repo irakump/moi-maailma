@@ -160,7 +160,7 @@ duck.age = 12;
 console.log(duck);
 
 // lisätään uusia ominaisuuksia
-duck.motto = "always ready";   // ammatti
+duck.motto = "always ready";
 console.log(duck);
 
 console.log(`Hello, I am ${duck.name}, my age is ${duck.age} and my motto is "${duck.motto}".`);
