@@ -4,7 +4,7 @@
 
 // DOM - Document Object Model
 
-// document on yksi olio, jonka metodeihin voi viitata (dokument."tässä joku juttu")
+// document on yksi olio, jonka metodeihin voi viitata (document."tässä joku juttu")
 
 // haetaan viittaus johonkin solmuun (node) DOMissa eli
 // haetaan viittaus HTML-dokumentin elementteihin (parametrina voi antaa merkkijonon samoin kuin css)
@@ -28,7 +28,7 @@ h1Element.classList.add("text");
 // piilotetaan elementti css:n avulla
 h1Element.classList.add("hidden")
 
-// näytetään taas eli poistetaan hidden-luokka?
+// näytetään taas eli poistetaan hidden-luokka
 h1Element.classList.remove("hidden")
 
 // ylemmän tason parent-elementin piilotus (nyt parent = header)
@@ -442,7 +442,7 @@ const section1 = main.querySelector("section");
 
 // aina kun tulee virhe, ks. console (näyttää virheet)!
 
-// kaksi tapaa lisätä tekstiä:
+// kaksi (kolme) tapaa lisätä tekstiä:
 // element.innerHTML = "";    // tämä silloin, jos haluaa lisätä html:ää
 // element.innerText = "";    // voi asettaa pelkkää tekstiä, palauttaa näkyvän tekstin
 // element.textContent = "";  // palauttaa sekä näkyvän että piilotetun tekstin
@@ -487,3 +487,10 @@ const section1 = main.querySelector("section");
 
 // metodeilla voi myös käydä läpi käyttäjän syötteen, esim. "2+13", ei tarvitse olla listassa
 
+// toinen esim, split()
+let text = "Heipparallaa!";
+const array1 = text.split("");
+console.log("Tulostan taulukon: ")
+for (const index of array1) {
+  console.log(index);           // tulostuu yksi kirjain kerrallaan
+}
