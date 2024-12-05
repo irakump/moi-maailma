@@ -143,3 +143,36 @@ console.log(numbers);
 // node = solmu, jokainen elementti, attribuutti ja konteksti (esim. teksti) on node
 
 // mod4
+
+
+////////////////////
+
+// noppa js:ssa:
+
+
+
+const dice1 = (Math.floor(Math.random()*6)+1);
+
+function throwDice(times) {
+  for (i=0; i<times; i++) {
+    const dice = Math.floor(Math.random()*6)+1;
+    console.log(`${i+1}. throw: ${dice}`);
+  }
+}
+
+// heitetään noppaa 6 kertaa
+throwDice(6);
+
+// noppa, jossa käyttäjä päättää tahkojen lukumäärän
+
+function throwADice() {
+  const diceNumbers = parseInt(prompt('Input the biggest number of the dice: '));
+  const diceAmount = parseInt(prompt('How many dice will be thrown?'));
+  for (i = 0; i < diceNumbers; i++) {
+    const diceResult = Math.floor(Math.random()*diceNumbers)+1;
+    console.log(`Throw ${i+1}: ${diceResult}`);
+  }
+}
+
+throwADice();
+

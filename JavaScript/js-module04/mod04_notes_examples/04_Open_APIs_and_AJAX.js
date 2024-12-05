@@ -30,7 +30,7 @@ X = XML, eXtensible Markup Language
 // tiedon hakeminen, jos tiedosto on samassa kansiossa: nimi riittää
 fetch("pics.json");
 
-// funktio, joka hakee kuvia tiedostosta, async, await (odottaa latauksen)
+// funktio, joka hakee kuvia tiedostosta, async, await (odottaa latauksen) --> async function = ohjelman suoritus jatkuu, vaikka funktio lataa/ odottaa responsea!
 async function fetchImages() {
   const response = await fetch("pics.json");
 
@@ -115,7 +115,7 @@ form.addEventListener("submit", async function (event) {
 
 
 
-// jos console logilla tulee "promise", puuttuu jostakin kohdasta awate -sana???
+// jos console logilla tulee "promise", puuttuu jostakin kohdasta await -sana???
 
 
 getAJoke();
@@ -153,13 +153,3 @@ console.log("script end");
 
 asynchronousFunction();
 */
-
-
-
-
-
-
-
-
-
-
