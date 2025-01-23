@@ -14,3 +14,18 @@ print(decimal)
 
 
 print(2**12)
+
+# vko2
+print()
+
+print(0&1)
+print(1&1)
+
+# totuusarvot
+# A and B --> A.B (esitystapa)
+# A or B --> A + B
+# A.B + C ((A ja B) tai C)
+
+
+
+
