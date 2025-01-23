@@ -1,3 +1,3 @@
 # Tehtäviä
-# Ohjelmisto 1: Python 
-# Ohjelmisto 2: Python, JavaScript, HTML (+CSS)
+## Ohjelmisto 1: Python 
+## Ohjelmisto 2: Python, JavaScript, HTML (+CSS)
