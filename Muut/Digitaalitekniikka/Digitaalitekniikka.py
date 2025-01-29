@@ -1,4 +1,4 @@
-# Digitaalitekniikka
+# Digitaalitekniikka = digital systems
 
 n = 3
 print(n**0)         # kolme potenssiin 0
@@ -26,6 +26,9 @@ print(1&1)
 # A or B --> A + B
 # A.B + C ((A ja B) tai C)
 
+# vko 3
+
+# SOP = Sum Of Products esim. A*B + A*C
 
 
 
